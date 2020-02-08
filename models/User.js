@@ -19,10 +19,10 @@ const userSchema = new Schema ({
         type: String,
         required: true
     },
-    id_friends: {
-        type: Schema.Types.ObjectId,
-        ref: "Friends"
-    },
+    trips: {
+        type: [Schema.Trip.ObjectId],
+        ref: "trip"
+    }
 });
 
 const userModel = mongoose.model("User", userSchema);

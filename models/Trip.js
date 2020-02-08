@@ -8,7 +8,7 @@ const tripSchema = new Schema ({
         required: true
     },
     userOwner: {
-        type: Schema.User.ObjectId,
+        type: [Schema.User.ObjectId],
         ref: "user",
         required: true
     },

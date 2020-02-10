@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const accommodationSchema = new Schema ({
     name: String,
-    place: String,
+    idStep: [{type: Schema.Types.ObjectId, ref:"tripStep"}],
     checkIn: {
         hour: String,
         date: Date
@@ -13,10 +13,8 @@ const accommodationSchema = new Schema ({
         date: Date
     },
     price: Number,
-    contact: {
-        telephone: Number,
-        email: String,
-    },
+    telephone: Number,
+    email: String,
     address: {
         number: Number,
         street: String,

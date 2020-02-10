@@ -21,7 +21,7 @@ const userSchema = new Schema ({
     },
     trips: {
         type: [Schema.Trip.ObjectId],
-        ref: "trip"
+        ref: "Trip"
     }
 });
 

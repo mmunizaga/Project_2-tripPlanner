@@ -6,6 +6,7 @@ const transportSchema = new Schema ({
         type: String,
         enum: ["Bus","Boat","Bike","Car","Motorcycle","Plane","Train"]
     },
+    idStep: [{type: Schema.Types.ObjectId, ref:"tripStep"}],
     from: {
         city: String,
         country: String
@@ -14,14 +15,8 @@ const transportSchema = new Schema ({
         city: String,
         country: String
     },
-    dateDepart: {
-        hour: String,
-        date: Date
-    },
-    dateArrive: {
-        hour: String,
-        date: Date
-    },
+    dateDepart: Date,
+    dateArrive: Date,
     ticketsUrl: String,
     price: Number,
     notes:{

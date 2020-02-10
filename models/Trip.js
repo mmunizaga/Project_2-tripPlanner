@@ -7,6 +7,7 @@ const tripSchema = new Schema ({
         default: "My new trip",
         required: true
     },
+    idStep: [{type: Schema.Types.ObjectId, ref:"tripStep"}],
     userOwner: {
         type: [Schema.User.ObjectId],
         ref: "user",

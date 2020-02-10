@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const transportSchema = new Schema ({
     type: {
-        type: String,
+        type: [String],
         enum: ["bus","boat","bike","car","motorcycle","plane","train"]
     },
     idStep: [{type: Schema.Types.ObjectId, ref:"tripStep"}],

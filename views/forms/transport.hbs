@@ -1,0 +1,62 @@
+<form method="post" action="/transport/create" class="form">
+    <h1 class="title">Create a transport</h1>
+
+    <label for="type">type of transport</label>
+    <select name="type" id="type" class="input">
+        <option value="plane">plane</option>
+        <option value="bus">bus</option>
+        <option value="car">car</option>
+        <option value="train">train</option>
+        <option value="walk">walk</option>
+        <option value="motorcycle">motorcycle</option>
+        <option value="bike">bike</option>
+        <option value="boat">boat</option>
+    </select>
+    <div class="flex">
+<section class="left place">
+    <label for="fromCity">From city :</label>
+    <input class="input" name="fromCity" type="text" value="Paris" required>
+    <label for="fromCountry">country :</label>
+    <input class="input" name="fromCountry" type="text" value="France" required>
+    <label for="toCity">to :</label>
+    <input class="input" name="toCity" type="text" value="San Tiago" required>
+    <label for="toCountry">country :</label>
+    <input class="input" name="toCountry" type="text" value="Chili" required>
+</section>
+<section class="right time">
+<label for="dateDepart">Choose a time for your depart:</label>
+<input type="datetime-local" id="dateDepart"
+       name="dateDepart" value="2020-06-12T19:30"
+       min="2020-01-07T00:00" max="2050-06-14T00:00" required>
+
+<label for="dateArrive">Choose a time for your depart:</label>
+<input type="datetime-local" id="dateArrive"
+       name="dateArrive" value="2020-06-12T19:30"
+       min="2020-01-07T00:00" max="2050-06-14T00:00" required>
+</section>
+</div>
+
+    <label for="ticketUrl">Ticket number</label>
+    <input class="input" name="ticketUrl" type="text" value="ticketUrl">
+
+    <label for="price">Price in EUR</label>
+    <input class="input" name="" type="number" value="100">
+
+<label for="note">Something more ?</label>
+<textarea id="note" name="note"
+          rows="5" cols="33">
+Ex. : Jerome is tall and can not stay in the bus during a long travel
+</textarea>
+
+
+
+
+    <label for="idStep">Trip step</label>
+    <select name="idStep" id="idStep" class="input" required>
+        {{#each transport}}
+        <option value="{{this.idStep._id}}">{{this.idStep.city}}</option>
+        {{/each}}
+    </select>
+
+    <button class="btn">create !</button>
+</form>

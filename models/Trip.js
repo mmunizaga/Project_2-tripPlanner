@@ -34,6 +34,10 @@ const tripSchema = new Schema ({
     },
     notes:{
         type:[String]
+    },    
+    image: {
+        type: String,
+        default: "https://back-lastminute.orchestra-platform.com/admin/TS/fckUserFiles/Image/ORCHESTRA/MONDIAL_TOURISME/TURQUIE/SEALIFE_BUKET/NEW/Sea-life-buket-vue-result.jpg"
     }
 });
 

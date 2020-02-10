@@ -25,6 +25,7 @@ const userSchema = new Schema ({
     },
     avatar: {
         type: String,
+        default: "https://www.allthetests.com/quiz22/picture/pic_1171831236_1.png"
     }
 });
 

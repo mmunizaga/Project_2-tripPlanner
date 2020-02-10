@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const transportSchema = new Schema ({
-    transport: {
+    type: {
         type: String,
-        enum: ["Bus","Boat","Bike","Car","Motorcycle","Plane","Train"]
+        enum: ["bus","boat","bike","car","motorcycle","plane","train"]
     },
     idStep: [{type: Schema.Types.ObjectId, ref:"tripStep"}],
     from: {
@@ -17,7 +17,7 @@ const transportSchema = new Schema ({
     },
     dateDepart: Date,
     dateArrive: Date,
-    ticketsUrl: String,
+    ticketUrl: String,
     price: Number,
     notes:{
         type:[String]

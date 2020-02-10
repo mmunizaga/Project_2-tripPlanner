@@ -10,7 +10,7 @@ const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 const cookieParser = require("cookie-parser");
 const path = require("path");
-const flash = require("connect-flash")
+// const flash = require("connect-flash")
 
 // initial config
 app.set("view engine", "hbs");
@@ -21,5 +21,34 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cookieParser());
 
+// SESSION SETUP
+app.use(
+    session({
+      secret: process.env.SESSION_SECRET,
+      cookie: { maxAge: 60000 },
+      store: new MongoStore({
+        mongooseConnection: mongoose.connection,
+        ttl: 24 * 60 * 60
+      }),
+      saveUninitialized: true,
+      resave: true
+    })
+  );
+  
+  app.locals.site_url = process.env.PORT;
+
+// Getting/Using router(s)
+const basePageRouter = require("./routes/index");
+app.use("/", basePageRouter);
+
+// const authRouter = require("./routes/auth");
+// app.use("/", authRouter);
+
+// const dashboardRouter = require("./routes/dashboard");
+// app.use("/", dashboardRouter);
+
+app.listen(process.env.PORT, function(){
+    console.log(`http://localhost/${process.env.PORT}`)
+});
 
 module.exports = app;

@@ -1,0 +1,25 @@
+<form method="post" action="" class="trip_form">
+    <h1 class="title">Sightseeing</h1>
+
+      <div>
+        <label for="idStep">Place</label>
+        {{> form_tripStep_select}}
+    </div>
+
+    <label for="dateAndHour">Date</label>
+    <input type="date" name="dateAndHour" class="input">
+
+     <label for="description">Description</label>
+    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+
+    <label for="ranking">My ranking</label>
+    <select name="ranking" id="ranking" class="input">
+        <option value="plane">0</option>
+        <option value="bus">1</option>
+        <option value="car">3</option>
+        <option value="train">4</option>
+        <option value="walk">5</option>
+
+    <button class="button">Create</button>
+    
+</form>

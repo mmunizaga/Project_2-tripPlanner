@@ -48,7 +48,7 @@ app.use("/", basePageRouter);
 // app.use("/", dashboardRouter);
 
 app.listen(process.env.PORT, function(){
-    console.log(`http://localhost/${process.env.PORT}`)
+    console.log(`http://localhost:${process.env.PORT}`)
 });
 
 module.exports = app;

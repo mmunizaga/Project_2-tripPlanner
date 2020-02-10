@@ -43,8 +43,8 @@ app.use("/", basePageRouter);
 const authRouter = require("./routes/auth");
 app.use("/", authRouter);
 
-// const dashboardRouter = require("./routes/dashboard");
-// app.use("/", dashboardRouter);
+const dashboardRouter = require("./routes/dashboard");
+app.use("/", dashboardRouter);
 
 app.listen(process.env.PORT, function(){
     console.log(`http://localhost/${process.env.PORT}`)

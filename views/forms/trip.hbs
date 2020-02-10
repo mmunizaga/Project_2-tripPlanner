@@ -1,14 +1,129 @@
-<div class="title"><span>Trip :</span><span></span>My new trip</div>
-<div class="box-container flex">
-    <div class="box flex">
-        <div class="inside-box"></div>
-        <div class="inside-box"></div>
+<form method="post" action="" class="trip_form">
+    <div class="title"><span>Trip :</span><span></span>My new trip</div>
+    <div class="box-container flex">
+        <div class="box flex side-by-side">
+            <div class="inside-box origin">
+                <h3>Depart</h3>
+                <label for="dateDepart">When go:</label>
+                <input type="datetime-local" id="dateDepart" name="dateDepart" value="2020-06-12T19:30"
+                    min="2020-01-07T00:00" max="2050-06-14T00:00">
+                <label for="fromCity">From city :</label>
+                <input class="input" name="fromCity" type="text" value="Paris">
+                <label for="fromCountry">country :</label>
+                <input class="input" name="fromCountry" type="text" value="France">
+
+            </div>
+            <div class="inside-box to-visit">
+                <h3>To visit</h3>
+                <label for="dateArrive">When back:</label>
+                <input type="datetime-local" id="dateArrive" name="dateArrive" value="2020-06-12T19:30"
+                    min="2020-01-07T00:00" max="2050-06-14T00:00">
+                <label for="toCity">to :</label>
+                <input class="input" name="toCity" type="text" value="San Tiago">
+                <label for="toCountry">country :</label>
+                <input class="input" name="toCountry" type="text" value="Chili">
+
+            </div>
+        </div>
+        <div class="box flex">
+            <h3>Accomodation</h3>
+            <div class="inside-box accomodation">
+                <label for="accommodations_type">accommodations type :</label>
+                <input class="input" name="accommodations_type" type="text" value="Villa">
+
+                <label for="type_accommodation">type of accomodation :</label>
+                <select name="type_accommodation" id="type" class="input">
+                    <option value="hotel">Hotel</option>
+                    <option value="villa">Villa</option>
+                    <option value="tent">Tent</option>
+                    <option value="house">House</option>
+                    <option value="private room">Private room</option>
+                    <option value="hostel">Hostel</option>
+                    <option value="car">Car</option>
+                    <option value="beach">Beach</option>
+                </select>
+
+                <div class="adress">
+                    <h4>Adress</h4>
+                    <label for="accommodations_number">numero</label>
+                    <input class="input" name="accommodations_number" type="number" value="accommodations_number">
+                    <label for="accommodations_street_type">ex. rue, boulevard, avenue</label>
+                    <input class="input" name="accommodations_street_type" type="text" value="rue">
+                    <label for="accommodations_street">name</label>
+                    <input class="input" name="accommodations_street" type="text" value="Cassis">
+                    <label for="accommodations_city">city</label>
+                    <input class="input" name="accommodations_city" type="text" value="Marseille">
+                </div>
+
+                <label for="accommodations_url">Reservation url</label>
+                <input class="input" name="accommodations_url" type="text" value="">
+
+                <label for="accommodations-price">Price in EUR</label>
+                <input class="input" name="accommodations-price" type="number" value="100">
+
+
+            </div>
+            <div class="inside-box transport">
+                <h3>Transport</h3>
+                <fieldset>
+                    <legend>Choose your monster's features:</legend>
+
+                    <div>
+                        <input type="checkbox" id="plane" value="plane" name="transport_type">
+                        <label for="plane">plane</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="bus" value="bus" name="transport_type">
+                        <label for="bus">bus</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="car" value="car" name="transport_type">
+                        <label for="car">car</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="train" value="train" name="transport_type">
+                        <label for="train">train</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="walk" value="walk" name="transport_type">
+                        <label for="walk">walk</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="motorcycle" value="motorcycle" name="transport_type">
+                        <label for="motorcycle">motorcycle</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="bike" value="bike" name="transport_type">
+                        <label for="bike">bike</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="boat" value="boat" name="transport_type">
+                        <label for="boat">boat</label>
+                    </div>
+                </fieldset>
+
+                <label for="ticketUrl">Ticket number</label>
+                <input class="input" name="ticketUrl" type="text" value="ticketUrl">
+
+                <label for="ticket-price">Price in EUR</label>
+                <input class="input" name="ticket-price" type="number" value="100">
+            </div>
+        </div>
+        <div class="box flex">
+            <div class="inside-box activities">
+                <label for="activity">go in a park</label>
+                <input class="input" name="activity" type="text" value="Eiffel Tower">
+            </div>
+        </div>
     </div>
-    <div class="box flex">
-        <div class="inside-box"></div>
-        <div class="inside-box"></div>
-    </div>
-    <div class="box flex">
-        <div class="inside-box"></div>
-    </div>
-</div>
+
+
+    <button>Let your trip begin !</button>
+</form>

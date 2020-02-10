@@ -2,39 +2,42 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const tripSchema = new Schema ({
+    userOwner: [{type:Schema.Types.ObjectId, ref:"User"}],
     title: {
         type: String,
         default: "My new trip",
         required: true
     },
-    idStep: [{type: Schema.Types.ObjectId, ref:"tripStep"}],
-    userOwner: {
-        type: [Schema.User.ObjectId],
-        ref: "user",
-        required: true
+    cityOrigin: {
+        date: Date,
+        city: String,
+        country: String,
+        transport_type: [String],
+        transport_price: Number,
+        transportUrl: [String]
     },
-    tripCompanions: {
-        type: [Schema.User.ObjectId],
-        ref: "companions"
+    cityToVisit: {
+        date: Date,
+        city: String,
+        country: String,
+        transport_type: [String],
+        transport_price: Number,
+        transportUrl: [String]
     },
-    transports: {
-        type: [Schema.Transport.ObjectId],
-        ref: "transports"
-    },
+
     accommodations: {
-        type:[Schema.Accommodation.ObjectId],
-        ref: "accommodations"
+        accommodations_type: String,
+        accommodations_price: Number,
+        accommodations_address: {
+            number: Number,
+            street: String,
+            street_type: String,
+            city: String,
+        },
+        accommodations_url: String
     },
-    places:{
-        type:[Schema.Places.ObjectId],
-        ref: "places"
-    },
-    necessaryDocuments:{
-        type:[String]
-    },
-    notes:{
-        type:[String]
-    },    
+    necessaryDocuments: [String],
+    activities:[String],
     image: {
         type: String,
         default: "https://back-lastminute.orchestra-platform.com/admin/TS/fckUserFiles/Image/ORCHESTRA/MONDIAL_TOURISME/TURQUIE/SEALIFE_BUKET/NEW/Sea-life-buket-vue-result.jpg"

@@ -10,7 +10,6 @@ const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 const cookieParser = require("cookie-parser");
 const path = require("path");
-// const flash = require("connect-flash")
 
 // initial config
 app.set("view engine", "hbs");
@@ -41,11 +40,11 @@ app.use(
 const basePageRouter = require("./routes/index");
 app.use("/", basePageRouter);
 
-// const authRouter = require("./routes/auth");
-// app.use("/", authRouter);
+const authRouter = require("./routes/auth");
+app.use("/", authRouter);
 
-// const dashboardRouter = require("./routes/dashboard");
-// app.use("/", dashboardRouter);
+const dashboardRouter = require("./routes/dashboard");
+app.use("/", dashboardRouter);
 
 app.listen(process.env.PORT, function(){
     console.log(`http://localhost:${process.env.PORT}`)

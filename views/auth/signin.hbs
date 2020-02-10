@@ -1,5 +1,9 @@
-<form method="post" action="/auth/signin" class="form">
+<form method="post" action="/signin" class="form">
     <h1 class="title">Signin</h1>
+
+    {{#if errorMessage}}
+        <div class="error-message">{{ errorMessage }}</div>
+    {{/if}}
 
     <label for="email"></label>
     <input class="input" name="email" type="text" value="test@yopmail.com">
@@ -10,6 +14,6 @@
     <hr>
     
     <p>
-        No account yet ? <a class="link" href="/auth/signup">please signup !</a>
+        No account yet ? <a class="link" href="/signup">please signup !</a>
     </p>
 </form>

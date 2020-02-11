@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: white;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.box-container {
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -webkit-column-gap: 10vw;
+          column-gap: 10vw;
+}
+
+.box {
+  border: 1px solid;
+}
+
+.form-page {
+  margin: 0 3vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 90vh;
+}
+/*# sourceMappingURL=trip-form.css.map */

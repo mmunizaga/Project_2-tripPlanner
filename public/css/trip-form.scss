@@ -1,0 +1,41 @@
+$background-color: white;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $background-color;
+}
+
+.grid{
+    display: grid;
+}
+
+.flex{
+    display:flex;
+}
+
+.box-container{
+grid-template-columns: 1fr 1fr 1fr;
+// grid-template-rows: 60vw 10vw;
+column-gap: 10vw;
+}
+
+.box{
+    border: 1px solid
+}
+
+.form-page{
+    margin: 0 3vw;
+flex-direction: column;
+justify-content: space-around;
+height: 90vh;
+}
+
+// @media (min-width: 403px) {
+//     .box-container{
+//         grid-template-columns: 1fr;
+//         grid-template-rows: 1fr 1fr 1fr;
+//         column-gap: 10vw;
+//         }
+// }

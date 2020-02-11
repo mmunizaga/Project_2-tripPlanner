@@ -72,8 +72,8 @@
                         </div>
                     </fieldset>
                     <label id="ticketUrl_go" for="ticketUrl_go">Ticket number</label>
-                    <input class="input" name="ticketUrl_go" type="text" value="{{cityOrigin.transportUrl}}">
-                    <input class="input" name="ticketUrl_go" type="text" value="{{cityOrigin.transportUrl}}">
+                    <input class="input" name="ticketUrl_go" type="text" value="{{#arrayElement trip.cityOrigin.transportUrl 0}}{{/arrayElement}}">
+                    <input class="input" name="ticketUrl_go" type="text" value="{{#arrayElement trip.cityToVisit.transportUrl 1}}{{/arrayElement}}">
 
                     <label for="ticket_price_go">Price</label>
                     <input class="input" name="ticket_price_go" type="number" value="{{trip.cityOrigin.transport_price}}">

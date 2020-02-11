@@ -6,7 +6,7 @@ const protectRoute = require("./../middlewares/protectRoute");
 router.get("/all-trips", (req, res) => {
 
   tripModel
-  .find()
+  .find({userOwner:req.session.currentUser._id})
   .then(trips => {
     res.render("all-trips", {
       trips

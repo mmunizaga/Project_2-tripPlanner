@@ -1,10 +1,8 @@
-<div>TRIPS PAGE <a href="/logout">logout</a></div>
-<hr>
-{{!-- {{#unless}}
-{{/unless}} --}}
-
-<ul>
-{{#each trips}}
-<li><a href="/trip/{{this._id}}">{{this.title}}</a></li>
-{{/each}}
-</ul>
+<div>
+    {{> trips_display}}
+</div>
+<div>
+    {{!-- cityToVisit.city --}}
+    {{!-- cityOrigin.date - cityToVisit.date --}}
+    {{!-- cityToVisit.country --}}
+</div>

@@ -37,7 +37,7 @@ router.post("/signup", (req, res, next) => {
         })
         .then((user) => {
             req.session.currentUser = user;
-            res.redirect("/tripPage");
+            res.redirect("/all-trips");
         })
         .catch(error => {
             console.log(error);
@@ -82,7 +82,7 @@ router.post("/signin", (req, res, next) => {
         }
         if(bcrypt.compareSync(thePassword, dbRes.password)){
             req.session.currentUser = dbRes;
-            res.redirect("/tripPage");
+            res.redirect("/all-trips");
         } else {
             res.render("auth/signin", {
                 errorMessage: "Incorrect email or password"

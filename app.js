@@ -22,17 +22,33 @@ app.use(cookieParser());
 
 // SESSION SETUP
 app.use(
-    session({
-      secret: process.env.SESSION_SECRET,
-      cookie: { maxAge: 60000 },
-      store: new MongoStore({
-        mongooseConnection: mongoose.connection,
-        ttl: 24 * 60 * 60
-      }),
-      saveUninitialized: true,
-      resave: true
-    })
-  );
+  session({
+    secret: process.env.SESSION_SECRET,
+    cookie: { maxAge: 60000 },
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 24 * 60 * 60
+    }),
+    saveUninitialized: true,
+    resave: true
+  })
+);
+// CUSTOM MIDDLEWARE
+// check if user is logged in... 
+// usecases : conditional display in hbs templates
+// WARNING: this function must be declared AFTER the session setup
+// WARNING: this function must be declared BEFORE app.use(router(s))
+function checkloginStatus(req, res, next) {
+  res.locals.user = req.session.currentUser ? req.session.currentUser : null; 
+  // access this value @ {{user}} or {{user.prop}} in .hbs
+  res.locals.isLoggedIn = Boolean(req.session.currentUser);
+  // access this value @ {{isLoggedIn}} in .hbs
+  next(); // continue to the requested route
+}
+
+app.use(checkloginStatus);
+
+
   
   app.locals.site_url = process.env.PORT;
 

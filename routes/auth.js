@@ -35,8 +35,9 @@ router.post("/signup", (req, res, next) => {
             password: hashPass,
             avatar
         })
-        .then(() => {
-            res.redirect("signin");
+        .then((user) => {
+            req.session.currentUser = user;
+            res.redirect("/tripPage");
         })
         .catch(error => {
             console.log(error);

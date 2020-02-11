@@ -1,6 +1,7 @@
 <form method="post" action="/signup" class="form_auth" >
 {{!-- enctype="multipart/form-data" --}}
     <h1 class="title">Sign up</h1>
+    <hr>
     {{#if errorMessage}}
         <div class="error-message">{{ errorMessage }}</div>
     {{/if}}
@@ -21,6 +22,6 @@
     <button class="btn">Go !</button>
     <hr>
     <p>
-        Already have an account? <a class="link" href="/auth/signin">sign in!</a>
+        Already have an account? <a class="link" href="/signin">sign in!</a>
     </p>
 </form>

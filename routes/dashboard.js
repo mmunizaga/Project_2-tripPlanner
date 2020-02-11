@@ -5,16 +5,12 @@ const protectRoute = require("./../middlewares/protectRoute");
 
 router.get("/all-trips", (req, res) => {
   tripModel
-    .find()
-    .then(trips => {
-      console.log("My trips are :")
-      trips.forEach((trip,i)=>console.log(i,") ",trip.title))
-      res.render("all-trips", {
-        trips
-      });
-    })
-    .catch(dbErr => {
-      console.log("OH NO ! Database error", dbErr);
+  .find({userOwner:req.session.currentUser._id})
+  .then(trips => {
+    console.log("My trips are :")
+    trips.forEach((trip,i)=>console.log(i,") ",trip.title))
+    res.render("all-trips", {
+      trips
     });
 });
 

@@ -189,3 +189,51 @@ height: 90vh;
         column-gap: 10vw;
         }
 } */
+
+/* ALL-TRIPS PAGE */
+
+.information-trip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.information {
+  font-family: 'Montserrat', sans-serif;
+  text-align: right;
+}
+
+.trips-container {
+  margin-left: 3vw;
+  display: grid;
+  width: 200px;
+  justify-items: center;
+}
+
+.image-container{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  box-shadow: 2px 2px 20px rgba(80, 81, 79, 1);
+  list-style: none;
+}
+
+.image-container img {
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.title-container {
+  width: 100%;
+  text-align: center;
+  list-style: none;
+  margin: 10px 0 30px 0;
+}
+
+.title-container a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(80, 81, 79, 1);
+}

@@ -8,4 +8,5 @@ router.get("/tripPage", protectRoute, (req, res) => {
   });
 
 
+
 module.exports = router;

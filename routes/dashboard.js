@@ -4,6 +4,7 @@ const tripModel = require("./../models/Trip");
 const protectRoute = require("./../middlewares/protectRoute");
 
 router.get("/all-trips", (req, res) => {
+
   tripModel
   .find()
   .then(trips => {
@@ -86,6 +87,9 @@ router.post("/create-a-trip", (req, res) => {
       console.log(">>>>>>>>>>>>>>>>>>>>No new trip have been created<<<<<<<<<<<<<<<<<<<<<<<<<<<<",error);
   })
   });
+
+
+
 
 
 

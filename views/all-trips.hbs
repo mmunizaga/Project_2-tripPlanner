@@ -1,7 +1,10 @@
 <div>TRIPS PAGE <a href="/logout">logout</a></div>
 <hr>
+{{!-- {{#unless}}
+{{/unless}} --}}
+
 <ul>
 {{#each trips}}
-<li>{{this.title}}</li>
+<li><a href="/trip/{{this._id}}">{{this.title}}</a></li>
 {{/each}}
 </ul>

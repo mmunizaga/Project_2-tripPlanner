@@ -13,7 +13,7 @@ const tripSchema = new Schema ({
         city: String,
         country: String,
         transport_type: [String],
-        transptransport_typeort_price: Number,
+        transport_price: Number,
         transportUrl: [String]
     },
     cityToVisit: {

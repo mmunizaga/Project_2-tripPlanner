@@ -42,7 +42,7 @@ router.post("/create-a-trip", (req, res) => {
       "country": fromCountry,
       "transport_type": transport_type_go,
       "transptransport_typeort_price": ticket_price_go,
-      "transportUrl": [ticketUrl_go]
+      "transportUrl": ticketUrl_go
     },
     "cityToVisit": {
       "date": dateArrive,
@@ -50,7 +50,7 @@ router.post("/create-a-trip", (req, res) => {
       "country": toCountry,
       "transport_type": transport_type_return,
       "transport_price": ticket_price_return,
-      "transportUrl": [ticketUrl_return]
+      "transportUrl": ticketUrl_return
   },
   "accommodations": {
     "accommodations_url": accommodations_url,
@@ -63,7 +63,7 @@ router.post("/create-a-trip", (req, res) => {
         "city": accommodations_city,
     },
   },
-  "activities": [activity],
+  "activities": activity,
 }
     //"necessaryDocuments": ticketUrl,
     console.log(data);

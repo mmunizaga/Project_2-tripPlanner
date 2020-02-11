@@ -1,183 +1,181 @@
 <form method="post" action="create-a-trip" class="trip_form">
     <div class="form-page flex">
-    <div class="title">
-    <label for="trip_name">My trip</label>
-    <input class="input" name="trip_name" type="text" value="My Santiago Trip">
-    </div>
-    <div class="box-container grid">
-        <div class="box flex side-by-side">
-            <div class="inside-box origin">
-                <h3>Depart</h3>
-                <label for="dateDepart">When go:</label>
-                <input type="datetime-local" id="dateDepart" name="dateDepart" value="2020-06-12T19:30"
-                    min="2020-01-07T00:00" max="2050-06-14T00:00">
-                <label for="fromCity">From city :</label>
-                <input class="input" name="fromCity" type="text" value="Paris">
-                <label for="fromCountry">country :</label>
-                <input class="input" name="fromCountry" type="text" value="France">
-
-            </div>
-            <div class="inside-box to-visit">
-                <h3>To visit</h3>
-                <label for="dateArrive">When back:</label>
-                <input type="datetime-local" id="dateArrive" name="dateArrive" value="2020-06-12T19:30"
-                    min="2020-01-07T00:00" max="2050-06-14T00:00">
-                <label for="toCity">to :</label>
-                <input class="input" name="toCity" type="text" value="Santiago">
-                <label for="toCountry">country :</label>
-                <input class="input" name="toCountry" type="text" value="Chili">
-
-            </div>
+        <div class="title">
+            <label for="trip_name">My trip</label>
+            <input class="input" name="trip_name" type="text" value="My Santiago Trip">
         </div>
-        <div class="box flex">
-            <div class="inside-box accomodation">
-            <h3>Accomodation</h3>
-                <label for="accommodations_type">accommodations type :</label>
-                <input class="input" name="accommodations_type" type="text" value="Villa">
+        <div class="box-container grid">
+            <div class="box flex side-by-side">
+                <div class="inside-box origin">
+                    <h3>Depart</h3>
+                    <label for="dateDepart">When go:</label>
+                    <input type="datetime-local" id="dateDepart" name="dateDepart" value="2020-06-12T19:30"
+                        min="2020-01-07T00:00" max="2050-06-14T00:00">
+                    <label for="fromCity">From city :</label>
+                    <input class="input" name="fromCity" type="text" value="Paris">
+                    <label for="fromCountry">country :</label>
+                    <input class="input" name="fromCountry" type="text" value="France">
 
-                <label for="type_accommodation">type of accomodation :</label>
-                <select name="type_accommodation" id="type" class="input">
-                    <option value="hotel">Hotel</option>
-                    <option value="villa">Villa</option>
-                    <option value="tent">Tent</option>
-                    <option value="house">House</option>
-                    <option value="private room">Private room</option>
-                    <option value="hostel">Hostel</option>
-                    <option value="car">Car</option>
-                    <option value="beach">Beach</option>
-                </select>
+                    <h3>Transport</h3>
+                    <fieldset>
+                        <legend>Go:</legend>
 
-                <div class="adress">
-                    <h4>Adress</h4>
-                    <label for="accommodations_number">number</label>
-                    <input class="input" name="accommodations_number" type="number" value="3">
-                    <label for="accommodations_street_type">ex. rue, boulevard, avenue</label>
-                    <input class="input" name="accommodations_street_type" type="text" value="caye">
-                    <label for="accommodations_street">name of the street</label>
-                    <input class="input" name="accommodations_street" type="text" value="Las condes">
-                    <label for="accommodations_city">city</label>
-                    <input class="input" name="accommodations_city" type="text" value="Santiago">
-                </div>
+                        <div>
+                            <input type="checkbox" id="plane" value="plane" name="transport_type_go">
+                            <label for="plane">plane</label>
+                        </div>
 
-                <label for="accommodations_url">url link</label>
-                <input class="input" name="accommodations_url" type="text" value="http://">
+                        <div>
+                            <input type="checkbox" id="bus" value="bus" name="transport_type_go">
+                            <label for="bus">bus</label>
+                        </div>
 
-                <label for="accommodations_price">Price</label>
-                <input class="input" name="accommodations_price" type="number" value="100"><span> EUR</span>
+                        <div>
+                            <input type="checkbox" id="car" value="car" name="transport_type_go">
+                            <label for="car">car</label>
+                        </div>
 
+                        <div>
+                            <input type="checkbox" id="train" value="train" name="transport_type_go">
+                            <label for="train">train</label>
+                        </div>
 
-            </div>
-            <div class="inside-box transport">
-                <h3>Transport</h3>
-                <fieldset>
-                    <legend>Go:</legend>
+                        <div>
+                            <input type="checkbox" id="walk" value="walk" name="transport_type_go">
+                            <label for="walk">walk</label>
+                        </div>
 
-                    <div>
-                        <input type="checkbox" id="plane" value="plane" name="transport_type_go">
-                        <label for="plane">plane</label>
+                        <div>
+                            <input type="checkbox" id="motorcycle" value="motorcycle" name="transport_type_go">
+                            <label for="motorcycle">motorcycle</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="bike" value="bike" name="transport_type_go">
+                            <label for="bike">bike</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="boat" value="boat" name="transport_type_go">
+                            <label for="boat">boat</label>
+                        </div>
+                    </fieldset>
+                    <label id="ticketUrl_go" for="ticketUrl_go">Ticket number</label>
+                    <input class="input" name="ticketUrl_go" type="text" value="http://">
+                    <input class="input" name="ticketUrl_go" type="text" value="http://">
+
+                    <label for="ticket_price_go">Price</label>
+                    <input class="input" name="ticket_price_go" type="number" value="100">
+
                     </div>
-
-                    <div>
-                        <input type="checkbox" id="bus" value="bus" name="transport_type_go">
-                        <label for="bus">bus</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="car" value="car" name="transport_type_go">
-                        <label for="car">car</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="train" value="train" name="transport_type_go">
-                        <label for="train">train</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="walk" value="walk" name="transport_type_go">
-                        <label for="walk">walk</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="motorcycle" value="motorcycle" name="transport_type_go">
-                        <label for="motorcycle">motorcycle</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="bike" value="bike" name="transport_type_go">
-                        <label for="bike">bike</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="boat" value="boat" name="transport_type_go">
-                        <label for="boat">boat</label>
-                    </div>
-                </fieldset>
-                <label for="ticketUrl_go">Ticket number</label>
-                <input class="input" name="ticketUrl_go" type="text" value="http://">
-
-                <label for="ticket_price_go">Price in EUR</label>
-                <input class="input" name="ticket_price_go" type="number" value="100">
-
+                <div class="inside-box to-visit">
+                    <h3>To visit</h3>
+                    <label for="dateArrive">When back:</label>
+                    <input type="datetime-local" id="dateArrive" name="dateArrive" value="2020-06-12T19:30"
+                        min="2020-01-07T00:00" max="2050-06-14T00:00">
+                    <label for="toCity">to :</label>
+                    <input class="input" name="toCity" type="text" value="Santiago">
+                    <label for="toCountry">country :</label>
+                    <input class="input" name="toCountry" type="text" value="Chili">
 <fieldset>
-                    <legend>Return:</legend>
+                        <legend>Return:</legend>
 
-                    <div>
-                        <input type="checkbox" id="plane" value="plane" name="transport_type_return">
-                        <label for="plane">plane</label>
+                        <div>
+                            <input type="checkbox" id="plane" value="plane" name="transport_type_return">
+                            <label for="plane">plane</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="bus" value="bus" name="transport_type_return">
+                            <label for="bus">bus</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="car" value="car" name="transport_type_return">
+                            <label for="car">car</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="train" value="train" name="transport_type_return">
+                            <label for="train">train</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="walk" value="walk" name="transport_type_return">
+                            <label for="walk">walk</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="motorcycle" value="motorcycle" name="transport_type_return">
+                            <label for="motorcycle">motorcycle</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="bike" value="bike" name="transport_type_return">
+                            <label for="bike">bike</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="boat" value="boat" name="transport_type_return">
+                            <label for="boat">boat</label>
+                        </div>
+                    </fieldset>
+
+                    <label id="ticketUrl_return" for="ticketUrl_return">Ticket number</label>
+                    <input class="input" name="ticketUrl_return" type="text" value="http://">
+                    <input class="input" name="ticketUrl_return" type="text" value="http://">
+
+                    <label for="ticket_price_return">Price</label>
+                    <input class="input" name="ticket_price_return" type="number" value="80">
+                
+                </div>
+            </div>
+            <div class="box flex">
+                <div class="inside-box accomodation">
+                    <h3>Accomodation</h3>
+
+                    <label for="type_accommodation">type of accomodation :</label>
+                    <select name="type_accommodation" id="type" class="input">
+                        <option value="hotel">Hotel</option>
+                        <option value="villa">Villa</option>
+                        <option value="tent">Tent</option>
+                        <option value="house">House</option>
+                        <option value="private room">Private room</option>
+                        <option value="hostel">Hostel</option>
+                        <option value="car">Car</option>
+                        <option value="beach">Beach</option>
+                    </select>
+
+                    <div class="adress">
+                        <h4>Adress</h4>
+                        <label for="accommodations_number">number</label>
+                        <input class="input" name="accommodations_number" type="number" value="3">
+                        <label for="accommodations_street_type">ex. rue, boulevard, avenue</label>
+                        <input class="input" name="accommodations_street_type" type="text" value="caye">
+                        <label for="accommodations_street">name of the street</label>
+                        <input class="input" name="accommodations_street" type="text" value="Las condes">
+                        <label for="accommodations_city">city</label>
+                        <input class="input" name="accommodations_city" type="text" value="Santiago">
                     </div>
 
-                    <div>
-                        <input type="checkbox" id="bus" value="bus" name="transport_type_return">
-                        <label for="bus">bus</label>
-                    </div>
+                    <label for="accommodations_url">url link</label>
+                    <input class="input" name="accommodations_url" type="text" value="http://">
 
-                    <div>
-                        <input type="checkbox" id="car" value="car" name="transport_type_return">
-                        <label for="car">car</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="train" value="train" name="transport_type_return">
-                        <label for="train">train</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="walk" value="walk" name="transport_type_return">
-                        <label for="walk">walk</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="motorcycle" value="motorcycle" name="transport_type_return">
-                        <label for="motorcycle">motorcycle</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="bike" value="bike" name="transport_type_return">
-                        <label for="bike">bike</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="boat" value="boat" name="transport_type_return">
-                        <label for="boat">boat</label>
-                    </div>
-                </fieldset>
+                    <label for="accommodations_price">Price</label>
+                    <input class="input" name="accommodations_price" type="number" value="100"><span> EUR</span>
 
 
-
-                <label for="ticketUrl_return">Ticket number</label>
-                <input class="input" name="ticketUrl_return" type="text" value="http://">
-
-                <label for="ticket_price_return">Price in EUR</label>
-                <input class="input" name="ticket_price_return" type="number" value="80">
+                </div>
+               
+            </div>
+            <div class="box flex">
+                <div class="inside-box activities">
+                    <label id="activity" for="activity">activities :</label>
+                    <input class="input" name="activity" type="text" value="Eiffel Tower">
+                    <input class="input" name="activity" type="text" value="Eiffel Tower">
+                </div>
             </div>
         </div>
-        <div class="box flex">
-            <div class="inside-box activities">
-                <label for="activity">activities</label>
-                <input class="input" name="activity" type="text" value="Eiffel Tower">
-            </div>
-        </div>
+        <button>Let your trip begin !</button>
     </div>
-    <button>Let your trip begin !</button>
-</div>
 </form>

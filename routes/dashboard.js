@@ -3,8 +3,17 @@ const router = new express.Router();
 const tripModel = require("./../models/Trip");
 const protectRoute = require("./../middlewares/protectRoute");
 
-router.get("/tripPage", protectRoute, (req, res) => {
-    res.render("signin_trips_page");
+router.get("/all-trips", (req, res) => {
+  tripModel
+  .find()
+  .then(trips => {
+    res.render("all-trips", {
+      trips
+    });
+  })
+  .catch(dbErr => {
+    console.log("OH NO ! Database error", dbErr);
+  })
   });
 
 router.get("/create-a-trip", (req, res) => {
@@ -36,13 +45,14 @@ router.post("/create-a-trip", (req, res) => {
 
 
     const data = {
+      userOwner : [req.session.currentUser._id],
       "title": trip_name,
       "cityOrigin": {"date": dateDepart,
       "city": fromCity,
       "country": fromCountry,
       "transport_type": transport_type_go,
       "transptransport_typeort_price": ticket_price_go,
-      "transportUrl": [ticketUrl_go]
+      "transportUrl": ticketUrl_go
     },
     "cityToVisit": {
       "date": dateArrive,
@@ -50,7 +60,7 @@ router.post("/create-a-trip", (req, res) => {
       "country": toCountry,
       "transport_type": transport_type_return,
       "transport_price": ticket_price_return,
-      "transportUrl": [ticketUrl_return]
+      "transportUrl": ticketUrl_return
   },
   "accommodations": {
     "accommodations_url": accommodations_url,
@@ -63,7 +73,7 @@ router.post("/create-a-trip", (req, res) => {
         "city": accommodations_city,
     },
   },
-  "activities": [activity],
+  "activities": activity,
 }
     //"necessaryDocuments": ticketUrl,
     console.log(data);

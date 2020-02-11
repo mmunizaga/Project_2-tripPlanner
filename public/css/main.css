@@ -176,7 +176,7 @@ column-gap: 10vw;
 }
 
 .form-page{
-    margin: 0 3vw;
+margin: 50px 3vw 0;
 flex-direction: column;
 justify-content: space-around;
 height: 90vh;

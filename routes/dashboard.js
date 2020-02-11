@@ -3,8 +3,17 @@ const router = new express.Router();
 const tripModel = require("./../models/Trip");
 const protectRoute = require("./../middlewares/protectRoute");
 
-router.get("/tripPage", protectRoute, (req, res) => {
-    res.render("signin_trips_page");
+router.get("/all-trips", (req, res) => {
+  tripModel
+  .find()
+  .then(trips => {
+    res.render("all-trips", {
+      trips
+    });
+  })
+  .catch(dbErr => {
+    console.log("OH NO ! Database error", dbErr);
+  })
   });
 
 router.get("/create-a-trip", (req, res) => {
@@ -36,6 +45,7 @@ router.post("/create-a-trip", (req, res) => {
 
 
     const data = {
+      userOwner : [req.session.currentUser._id],
       "title": trip_name,
       "cityOrigin": {"date": dateDepart,
       "city": fromCity,

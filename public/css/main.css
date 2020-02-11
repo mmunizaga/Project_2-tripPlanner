@@ -8,22 +8,33 @@ paragraph: font-family: 'Montserrat', sans-serif; */
   padding: 0;
 }
 
-/* SIGNIN - SIGNUP */
-
-.form {
-  margin: 30px auto;
-  width: 380px;
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: lighter;
 }
 
-.form label {
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* SIGNIN - SIGNUP */
+
+.form_auth {
+  margin: 30px auto;
+  width: 380px;
+  padding-top: 100px;
+}
+
+.form_auth label {
   color: #666;
   display: inline-block;
   margin-bottom: 10px;
   width: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.form input,
-.form button {
+.form_auth input,
+.form_auth button {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 14px;
@@ -31,11 +42,12 @@ paragraph: font-family: 'Montserrat', sans-serif; */
   padding: 4px;
   width: 100%;
   margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.form button {
-  background: #43a3e6;
-  border: 1px solid #43a3e6;
+.form_auth button {
+  background: rgba(36, 123, 160, 1);
+  border: 1px solid rgba(36, 123, 160, 1);
   border-radius: 4px;
   color: #fff;
   cursor: pointer;
@@ -47,11 +59,12 @@ paragraph: font-family: 'Montserrat', sans-serif; */
   -webkit-transition: .3s ease background;
   transition: .3s ease background;
   width: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.form button:hover {
+.form_auth button:hover {
   background: #fff;
-  color: #43a3e6;
+  color: rgba(36, 123, 160, 1);
   -webkit-transition: .3s ease background;
   transition: .3s ease background;
 }
@@ -63,6 +76,8 @@ paragraph: font-family: 'Montserrat', sans-serif; */
     margin: 20px auto;
     padding: 20px;
     width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 4px;
   }
 
   /* NAV-BAR */
@@ -81,8 +96,8 @@ paragraph: font-family: 'Montserrat', sans-serif; */
   .nav-wrapper {
     justify-content: space-evenly;
     align-items: center;
-    height: 70px;
-    box-shadow: 0px 2px 20px rgba(80, 81, 79, 1);;
+    height: 50px;
+    box-shadow: 0px 2px 20px rgba(80, 81, 79, 1);
   }
 
   .nav-wrapper a {
@@ -105,3 +120,38 @@ paragraph: font-family: 'Montserrat', sans-serif; */
   .nav-item {
     padding-right: 10px;
   }
+
+/* TRIP FORM */
+
+  .grid{
+    display: grid;
+}
+
+.flex{
+    display:flex;
+}
+
+.box-container{
+grid-template-columns: 1fr 1fr 1fr;
+/* grid-template-rows: 60vw 10vw; */
+column-gap: 10vw;
+}
+
+.box{
+    border: 1px solid
+}
+
+.form-page{
+margin: 50px 3vw 0;
+flex-direction: column;
+justify-content: space-around;
+height: 90vh;
+}
+
+ /* @media (min-width: 403px) {
+     .box-container{
+         grid-template-columns: 1fr;
+         grid-template-rows: 1fr 1fr 1fr;
+        column-gap: 10vw;
+        }
+} */

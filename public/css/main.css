@@ -17,12 +17,36 @@ p {
   font-family: 'Montserrat', sans-serif;
 }
 
+.main-container {
+  padding-top: 50px;
+}
+
 /* SIGNIN - SIGNUP */
 
-.form_auth {
-  margin: 30px auto;
-  width: 380px;
-  padding-top: 100px;
+@media screen and (min-width: 500px) {
+  .form_auth {
+    margin: 30px auto;
+    width: 380px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .form_auth {
+    margin: 30px auto;
+    width: 300px;
+    padding-top: 50px;
+  }
+}
+
+.form_auth h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgba(80, 81, 79, 1);
+}
+
+.form_auth p {
+  color: rgba(80, 81, 79, 1);
+  margin-top: 20px;
 }
 
 .form_auth label {
@@ -43,6 +67,15 @@ p {
   width: 100%;
   margin-bottom: 20px;
   font-family: 'Montserrat', sans-serif;
+  
+}
+
+.form_auth .input {
+  border: 1px solid rgb(149, 150, 148);
+  border-radius: 3px;
+}
+
+#input-file {
 }
 
 .form_auth button {

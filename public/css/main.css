@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 
 /* FONT:
 titles: font-family: 'Raleway', sans-serif;
@@ -10,49 +12,65 @@ paragraph: font-family: 'Montserrat', sans-serif; */
 
 /* SIGNIN - SIGNUP */
 
+>>>>>>> 387eb54142df8860a333e790ab6b13ca86aec028
 .form {
-    margin: 30px auto;
-    width: 380px;
-  }
-  
-  .form label {
-    color: #666;
-    display: inline-block;
-    margin-bottom: 10px;
-    width: 100%;
-  }
-  
-  .form input,
-  .form button {
-    box-sizing: border-box;
-    font-size: 14px;
-    outline: 0;
-    padding: 4px;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .form button {
-    background: #43a3e6;
-    border: 1px solid #43a3e6;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    padding: 8px 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: .3s ease background;
-    width: 100%;
-  }
-  
-  .form button:hover {
-    background: #fff;
-    color: #43a3e6;
-    transition: .3s ease background;
-  }
+  margin: 30px auto;
+  width: 380px;
+}
 
+.form label {
+  color: #666;
+  display: inline-block;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.form input,
+.form button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form button {
+  background: #43a3e6;
+  border: 1px solid #43a3e6;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: .3s ease background;
+  transition: .3s ease background;
+  width: 100%;
+}
+
+.form button:hover {
+  background: #fff;
+  color: #43a3e6;
+  -webkit-transition: .3s ease background;
+  transition: .3s ease background;
+}
+
+<<<<<<< HEAD
+.error-message {
+  background: #F02B63;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  width: 100%;
+}
+/*# sourceMappingURL=main.css.map */
+=======
   .error-message {
     background: #F02B63;
     box-sizing: border-box;
@@ -102,3 +120,4 @@ paragraph: font-family: 'Montserrat', sans-serif; */
   .nav-item {
     padding-right: 10px;
   }
+>>>>>>> 387eb54142df8860a333e790ab6b13ca86aec028

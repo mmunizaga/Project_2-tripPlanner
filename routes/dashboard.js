@@ -12,11 +12,12 @@ router.get("/all-trips", protectRoute, (req, res) => {
     console.log("My trips are :")
     trips.forEach((trip,i)=>console.log(i,") ",trip.title))
     res.render("all-trips", {
-      trips
+      trips,
+      scripts:["trip-display.js"]
     });
   });
 });
-})
+
 
 router.get("/create-a-trip",protectRoute, (req, res) => {
 

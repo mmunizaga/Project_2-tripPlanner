@@ -63,6 +63,9 @@ app.use("/", authRouter);
 const dashboardRouter = require("./routes/dashboard");
 app.use("/", dashboardRouter);
 
+const axiosRouter = require("./routes/axiosCalls");
+app.use("/", axiosRouter)
+
 app.listen(process.env.PORT, function(){
     console.log(`http://localhost:${process.env.PORT}`)
 });

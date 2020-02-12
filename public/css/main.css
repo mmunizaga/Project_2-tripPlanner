@@ -175,6 +175,7 @@ p {
   padding-right: 10px;
 }
 
+<<<<<<< HEAD
 /* TRIP FORM */
 .grid {
   display: -ms-grid;
@@ -217,6 +218,8 @@ p {
         column-gap: 10vw;
         }
 } */
+=======
+>>>>>>> c379e8689251819a2a4c1ef500c01416ed9707cd
 /* ALL-TRIPS PAGE */
 .trip_all {
   width: 100%;
@@ -412,4 +415,42 @@ width: 10000px;} */
     transform-origin: left;
   }
 }
+<<<<<<< HEAD
 /*# sourceMappingURL=main.css.map */
+=======
+
+/* TRIP FORM */
+
+.grid{
+  display: grid;
+}
+
+.flex{
+  display:flex;
+}
+
+.box-container{
+grid-template-columns: 1fr 1fr 1fr;
+/* grid-template-rows: 60vw 10vw; */
+column-gap: 10vw;
+}
+
+.box{
+  border: 1px solid
+}
+
+.form-page{
+margin:0 3vw;
+flex-direction: column;
+justify-content: space-around;
+height: 90vh;
+}
+
+/* @media (min-width: 403px) {
+   .box-container{
+       grid-template-columns: 1fr;
+       grid-template-rows: 1fr 1fr 1fr;
+      column-gap: 10vw;
+      }
+} */
+>>>>>>> c379e8689251819a2a4c1ef500c01416ed9707cd

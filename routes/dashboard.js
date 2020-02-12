@@ -17,12 +17,12 @@ router.get("/all-trips", protectRoute, (req, res) => {
 });
 })
 
-router.get("/create-a-trip", (req, res) => {
+router.get("/create-a-trip",protectRoute, (req, res) => {
 
   res.render("forms/trip",{date:Date(Date.now())});
 });
 
-router.get("/my-trip/:id", (req, res) => {
+router.get("/my-trip/:id",protectRoute, (req, res) => {
   tripModel
     .findById(req.params.id)
     .then(trip => {   
@@ -46,10 +46,10 @@ router.get("/my-trip/:id/edit-my-trip", (req, res) => {
   tripModel
     .findById(req.params.id)
     .then(trip => {
-      trip.cityOrigin.date =  moment(trip.cityOrigin.date).format("YYYY-MM-DD[T]HH:mm")
-      trip.cityToVisit.date =  moment(trip.cityToVisit.date).format("YYYY-MM-DD[T]HH:MM")
+      trip.cityOrigin.date =  moment(trip.cityOrigin.date).format("YYYY-MM-DD[T]HH:mm").toString()
+      trip.cityToVisit.date =  moment(trip.cityToVisit.date).format("YYYY-MM-DD[T]HH:MM").toString()
   
-      console.log(trip.cityOrigin.date)
+
       res.render("forms/edit-my-trip", { trip });
     })
     .catch(error => console.log(error));

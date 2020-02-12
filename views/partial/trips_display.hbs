@@ -1,8 +1,59 @@
-<ul class="trips-container">
-{{#each trips}}
-    <li class="image-container"><a href="/my-trip/{{this._id}}"><img src="{{this.image}}" id="{{this._id}}"></a></li>
-    <li class="title-container"><a href="/my-trip/{{this._id}}">{{this.title}}</a></li>
-{{/each}}
-<li class="image-container"><a href="/create-a-trip"><img src="/assets/img/default_trip.jpg"></a></li>
-<li class="title-container"><a href="/create-a-trip">Create a trip!</a></li>
-</ul>
+<div id="all" class="flex">
+    <div id="timeline" class="trips-container start ">
+        {{#each trips}}
+        <div class="trip-container flex vcenter">
+            <div class="left">
+                <div class="image-container"><a href="/my-trip/{{this._id}}"><img src="{{this.image}}"
+                            id="{{this._id}}"></a></div>
+                <div class="title-container"><a href="/my-trip/{{this._id}}">
+                        <h3>{{this.title}}</h3>
+                    </a></div>
+                <div class="destination-container">
+                    <h4>{{this.cityOrigin.city}} - {{this.cityToVisit.city}}</h4></a>
+                </div>
+            </div>
+
+        </div>
+        {{/each}}
+
+        <div class="trip-container flex vcenter">
+            <div class="left">
+                <div class="image-container"><a href="/create-a-trip"><img src="/assets/img/default_trip.jpg"></a></div>
+                <div class="title-container"><a href="/create-a-trip">
+                        <h3>Create a trip !</h3>
+                    </a></div>
+                <div class="destination-container">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="details" class="flex row is_hidden">
+        <div class="details-top flex"></div>
+        <h4 class="dates flex"> </h4>
+        <h1 class="trip_name flex"></h1>
+        <h4 class="place flex"></h4>
+        <span class="accommodations flex"></span>
+        <span class="transports flex"></span>
+    </div>
+    <div class="details-bottom">
+        <div id="necessaryThings"class="box-detail">
+            <ul></ul>
+        </div>
+        <div id="activities" class="box-detail">
+            <ul></ul>
+        </div>
+        <div id="notes" class="box-detail">
+        </div>
+    </div>
+
+</div>
+<div id="image">
+    <img id="background" class="" src={{#if trips.image}} {{trips.image}}
+        {{else}} "https://images.unsplash.com/photo-1580993123109-63aea48b2807?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80"
+        {{/if}}>
+</div>
+<div id="image">
+    <img id="layer" src="./assets/img/layer4.png">
+
+</div>

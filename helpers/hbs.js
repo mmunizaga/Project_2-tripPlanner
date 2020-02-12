@@ -66,12 +66,29 @@ hbs.registerHelper("compare", function(lvalue, rvalue, options) {
   }
 });
 
-hbs.registerHelper("format-date", function(date) {
-  return moment(date).format("YYYY-MM-DD[T]HH:MM");
+hbs.registerHelper("format-date", function(date,rule) {
+  if(!rule) rule = "YYYY-MM-DD[T]HH:MM"
+  return moment(date).format(rule);
 });
 
 hbs.registerHelper("now", function() {
   return moment().format("YYYY-MM-DD[T]HH:MM");
+});
+
+hbs.registerHelper("fontAwersome", function(option) {
+  const renderAwersome = ""
+  if(typeof option === "string") option = [option]
+
+  option.forEach(a=>{
+  if (a === "house" || a === "hostel" ) renderAwersome+='<i class="fas fa-home"></i>'
+  if (a === "hotel") renderAwersome+='<i class="fas fa-hotel"></i>'
+  if (a === "villa") renderAwersome+='<i class="fab fa-fort-awesome"></i>'
+  if (a === "tent") renderAwersome+='<i class="fas fa-campground"></i>'
+  if (a === "private room") renderAwersome+='<i class="fab fa-airbnb"></i>'
+  if (a === "car") renderAwersome+='<i class="fas fa-car"></i>'
+  if (a === "beach") renderAwersome+='<i class="fas fa-umbrella-beach"></i>'})
+  
+  return renderAwersome;
 });
 
 hbs.registerHelper("isChecked", function(lvalue, arrvalue) {

@@ -13,7 +13,7 @@
                     <h3>Depart</h3>
                     <label for="dateDepart">When go:</label>
                     <input type="datetime-local" id="dateDepart" name="dateDepart"
-                        value="{{#format-date trip.cityOrigin.date}}{{/format-date}}" min="2020-01-07T00:00"
+                        value="{{#format-date trip.cityOrigin.date ""}}{{/format-date}}" min="2020-01-07T00:00"
                         max="2050-06-14T00:00">
                     <label for="fromCity">From city :</label>
                     <input class="input" name="fromCity" type="text" value="{{trip.cityOrigin.city}}">
@@ -86,7 +86,7 @@
                 <div class="inside-box to-visit">
                     <h3>To visit</h3>
                     <label for="dateArrive">When back:</label>
-                    <input type="datetime-local" id="dateArrive" name="dateArrive" value="{{#format-date trip.cityToVisit.date}}{{/format-date}}"
+                    <input type="datetime-local" id="dateArrive" name="dateArrive" value="{{#format-date trip.cityToVisit.date ""}}{{/format-date}}"
                         min="2020-01-07T00:00" max="2050-06-14T00:00">
                     <label for="toCity">to :</label><br>
                     <input class="input" name="toCity" type="text" value="{{trip.cityToVisit.city}}">
@@ -164,31 +164,31 @@
                     <label for="type_accommodation">type of accomodation :</label>
                     <select name="type_accommodation" id="type" class="input">
                         <option value="hotel"
-                            {{#compare "hotel" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            {{#compare "hotel" trip.accommodations.accommodations_type operator="==="}}selected{{/compare}}>
                             Hotel</option>
                         <option value="house"
-                            {{#compare "house" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            {{#compare "house" trip.accommodations.accommodations_type operator="==="}}selected{{/compare}}>
                             House</option>
                         <option value="villa"
-                            {{#compare "villa" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            {{#compare "villa" trip.accommodations.accommodations_type operator="==="}}selected{{/compare}}>
                             Villa</option>
                         <option value="tent"
-                            {{#compare "tent" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            {{#compare "tent" trip.accommodations.accommodations_type operator="==="}}selected{{/compare}}>
                             Tent</option>
                         <option value="house"
-                            {{#compare "house" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            {{#compare "house" trip.accommodations.accommodations_type operator="==="}}selected{{/compare}}>
                             House</option>
                         <option value="private room"
-                            {{#compare "private room" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            {{#compare "private room" trip.accommodations.accommodations_type operator="==="}}selected{{/compare}}>
                             Private room</option>
                         <option value="hostel"
-                            {{#compare "hostel" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            {{#compare "hostel" trip.accommodations.accommodations_type operator="==="}}selected{{/compare}}>
                             Hostel</option>
                         <option value="car"
-                            {{#compare "car" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            {{#compare "car" trip.accommodations.accommodations_type operator="==="}}selected{{/compare}}>
                             Car</option>
                         <option value="beach"
-                            {{#compare "beach" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            {{#compare "beach" trip.accommodations.accommodations_type operator="==="}}selected{{/compare}}>
                             Beach</option>
                     </select>
 

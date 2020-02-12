@@ -38,10 +38,18 @@
     </div>
     <div class="details-bottom">
         <div id="necessaryThings"class="box-detail">
-            <ul></ul>
+            <ul>
+                {{#each necessaryThings}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
         </div>
         <div id="activities" class="box-detail">
-            <ul></ul>
+            <ul>
+                {{#each activities}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
         </div>
         <div id="notes" class="box-detail">
         </div>

@@ -2,8 +2,10 @@ const express = require("express");
 const router = new express.Router();
 const tripModel = require("./../models/Trip");
 const protectRoute = require("./../middlewares/protectRoute");
+const moment = require("moment");
 
-router.get("/all-trips", (req, res) => {
+
+router.get("/all-trips", protectRoute, (req, res) => {
   tripModel
   .find({userOwner:req.session.currentUser._id})
   .then(trips => {
@@ -14,15 +16,17 @@ router.get("/all-trips", (req, res) => {
     });
   });
 });
+})
 
-router.get("/create-a-trip", (req, res) => {
-  res.render("forms/trip");
+router.get("/create-a-trip",protectRoute, (req, res) => {
+
+  res.render("forms/trip",{date:Date(Date.now())});
 });
 
-router.get("/my-trip/:id", (req, res) => {
+router.get("/my-trip/:id",protectRoute, (req, res) => {
   tripModel
     .findById(req.params.id)
-    .then(trip => {
+    .then(trip => {   
       res.render("my-trip", { trip });
     })
     .catch(error => console.log(error));
@@ -43,6 +47,10 @@ router.get("/my-trip/:id/edit-my-trip", (req, res) => {
   tripModel
     .findById(req.params.id)
     .then(trip => {
+      trip.cityOrigin.date =  moment(trip.cityOrigin.date).format("YYYY-MM-DD[T]HH:mm").toString()
+      trip.cityToVisit.date =  moment(trip.cityToVisit.date).format("YYYY-MM-DD[T]HH:MM").toString()
+  
+
       res.render("forms/edit-my-trip", { trip });
     })
     .catch(error => console.log(error));
@@ -58,7 +66,9 @@ router.post("/my-trip/:id/edit", (req, res) => {
     .catch(error => console.log(error));
 });
 
-router.post("/create-a-trip", (req, res) => {
+router.post("/create-a-trip", protectRoute, (req, res,next) => {
+  console.log(req.session.currentUser,"---------------------------------------------------");
+  
   const trip_name = req.body.trip_name;
   const dateDepart = req.body.dateDepart;
   const dateArrive = req.body.dateArrive;
@@ -81,6 +91,10 @@ router.post("/create-a-trip", (req, res) => {
   const ticketUrl_go = req.body.ticketUrl_go;
   const ticket_price_go = req.body.ticket_price_go;
 
+console.log(dateArrive);
+console.log(Date(dateArrive));
+
+
   const data = {
     userOwner: [req.session.currentUser._id],
     title: trip_name,
@@ -89,7 +103,7 @@ router.post("/create-a-trip", (req, res) => {
       city: fromCity,
       country: fromCountry,
       transport_type: transport_type_go,
-      transptransport_typeort_price: ticket_price_go,
+      transport_price: ticket_price_go,
       transportUrl: ticketUrl_go
     },
     cityToVisit: {

@@ -12,8 +12,9 @@
                 <div class="inside-box origin">
                     <h3>Depart</h3>
                     <label for="dateDepart">When go:</label>
-                    <input type="datetime-local" id="dateDepart" name="dateDepart" value="{{trip.cityOrigin.date}}"
-                        min="2020-01-07T00:00" max="2050-06-14T00:00">
+                    <input type="datetime-local" id="dateDepart" name="dateDepart"
+                        value="{{#format-date trip.cityOrigin.date}}{{/format-date}}" min="2020-01-07T00:00"
+                        max="2050-06-14T00:00">
                     <label for="fromCity">From city :</label>
                     <input class="input" name="fromCity" type="text" value="{{trip.cityOrigin.city}}">
                     <label for="fromCountry">country :</label>
@@ -72,17 +73,20 @@
                         </div>
                     </fieldset>
                     <label id="ticketUrl_go" for="ticketUrl_go">Ticket number</label>
-                    <input class="input" name="ticketUrl_go" type="text" value="{{cityOrigin.transportUrl}}">
-                    <input class="input" name="ticketUrl_go" type="text" value="{{cityOrigin.transportUrl}}">
+                    <input class="input" name="ticketUrl_go" type="text"
+                        value="{{#arrayElement trip.cityOrigin.transportUrl 0}}{{/arrayElement}}">
+                    <input class="input" name="ticketUrl_go" type="text"
+                        value="{{#arrayElement trip.cityToVisit.transportUrl 1}}{{/arrayElement}}">
 
                     <label for="ticket_price_go">Price</label>
-                    <input class="input" name="ticket_price_go" type="number" value="{{trip.cityOrigin.transport_price}}">
+                    <input class="input" name="ticket_price_go" type="number"
+                        value="{{trip.cityOrigin.transport_price}}">
 
                 </div>
                 <div class="inside-box to-visit">
                     <h3>To visit</h3>
                     <label for="dateArrive">When back:</label>
-                    <input type="datetime-local" id="dateArrive" name="dateArrive" value="{{trip.cityToVisit.date}}"
+                    <input type="datetime-local" id="dateArrive" name="dateArrive" value="{{#format-date trip.cityToVisit.date}}{{/format-date}}"
                         min="2020-01-07T00:00" max="2050-06-14T00:00">
                     <label for="toCity">to :</label>
                     <input class="input" name="toCity" type="text" value="{{trip.cityToVisit.city}}">
@@ -158,33 +162,58 @@
 
                     <label for="type_accommodation">type of accomodation :</label>
                     <select name="type_accommodation" id="type" class="input">
-                        <option value="hotel" {{#compare "hotel" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>Hotel</option>
-                        <option value="villa" {{#compare "villa" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>Villa</option>
-                        <option value="tent" {{#compare "tent" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>Tent</option>
-                        <option value="house" {{#compare "house" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>House</option>
-                        <option value="private room" {{#compare "private room" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>Private room</option>
-                        <option value="hostel" {{#compare "hostel" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>Hostel</option>
-                        <option value="car" {{#compare "car" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>Car</option>
-                        <option value="beach" {{#compare "beach" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>Beach</option>
+                        <option value="hotel"
+                            {{#compare "hotel" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            Hotel</option>
+                        <option value="house"
+                            {{#compare "house" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            House</option>
+                        <option value="villa"
+                            {{#compare "villa" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            Villa</option>
+                        <option value="tent"
+                            {{#compare "tent" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            Tent</option>
+                        <option value="house"
+                            {{#compare "house" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            House</option>
+                        <option value="private room"
+                            {{#compare "private room" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            Private room</option>
+                        <option value="hostel"
+                            {{#compare "hostel" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            Hostel</option>
+                        <option value="car"
+                            {{#compare "car" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            Car</option>
+                        <option value="beach"
+                            {{#compare "beach" trip.accommodations.accommodations_type operator="==="}}checked{{/compare}}>
+                            Beach</option>
                     </select>
 
                     <div class="adress">
                         <h4>Adress</h4>
                         <label for="accommodations_number">number</label>
-                        <input class="input" name="accommodations_number" type="number" value="{{trip.accommodations.accommodations_address.number}}">
+                        <input class="input" name="accommodations_number" type="number"
+                            value="{{trip.accommodations.accommodations_address.number}}">
                         <label for="accommodations_street_type">ex. rue, boulevard, avenue</label>
-                        <input class="input" name="accommodations_street_type" type="text" value="{{trip.accommodations.accommodations_address.street}}">
+                        <input class="input" name="accommodations_street_type" type="text"
+                            value="{{trip.accommodations.accommodations_address.street}}">
                         <label for="accommodations_street">name of the street</label>
-                        <input class="input" name="accommodations_street" type="text" value="{{trip.accommodations.accommodations_address.street_type}}">
+                        <input class="input" name="accommodations_street" type="text"
+                            value="{{trip.accommodations.accommodations_address.street_type}}">
                         <label for="accommodations_city">city</label>
-                        <input class="input" name="accommodations_city" type="text" value="{{trip.accommodations.accommodations_address.city}}">
+                        <input class="input" name="accommodations_city" type="text"
+                            value="{{trip.accommodations.accommodations_address.city}}">
                     </div>
 
                     <label for="accommodations_url">url link</label>
-                    <input class="input" name="accommodations_url" type="text" value="{{trip.accommodations.accommodations_url}}">
+                    <input class="input" name="accommodations_url" type="text"
+                        value="{{trip.accommodations.accommodations_url}}">
 
                     <label for="accommodations_price">Price</label>
-                    <input class="input" name="accommodations_price" type="number" value="{{trip.accommodations.accommodations_price}}"><span> EUR</span>
+                    <input class="input" name="accommodations_price" type="number"
+                        value="{{trip.accommodations.accommodations_price}}"><span> EUR</span>
 
 
                 </div>
@@ -193,8 +222,10 @@
             <div class="box flex">
                 <div class="inside-box activities">
                     <label id="activity" for="activity">activities :</label>
-                <input class="input" name="activity" type="text" value="{{#arrayElement trip.activities 0}}{{/arrayElement}}">
-                    <input class="input" name="activity" type="text" value="{{#arrayElement trip.activities 1}}{{/arrayElement}}">
+                    <input class="input" name="activity" type="text"
+                        value="{{#arrayElement trip.activities 0}}{{/arrayElement}}">
+                    <input class="input" name="activity" type="text"
+                        value="{{#arrayElement trip.activities 1}}{{/arrayElement}}">
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 const hbs = require("hbs");
-// const moment = require("moment");
+const moment = require("moment");
 
 // CUSTOM HELPERS
 
@@ -66,13 +66,16 @@ hbs.registerHelper("compare", function(lvalue, rvalue, options) {
   }
 });
 
-hbs.registerHelper("format-date", function(date, rule) {
-  if (!rule) rule = "YYYY-MM-DD";
-  return moment(date).format(rule);
+hbs.registerHelper("format-date", function(date) {
+  return moment(date).format("YYYY-MM-DD[T]HH:MM");
+});
+
+hbs.registerHelper("now", function() {
+  return moment().format("YYYY-MM-DD[T]HH:MM");
 });
 
 hbs.registerHelper("isChecked", function(lvalue, arrvalue) {
-  return arrvalue ? arrvalue.includes(lvalue) ? "checked" : "" : "";
+  return arrvalue ? (arrvalue.includes(lvalue) ? "checked" : "") : "";
 });
 
 hbs.registerHelper("arrayElement", function(array, index) {

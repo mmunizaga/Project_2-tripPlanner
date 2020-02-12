@@ -18,7 +18,6 @@ router.get("/all-trips", protectRoute, (req, res) => {
 })
 
 router.get("/create-a-trip",protectRoute, (req, res) => {
-
   res.render("forms/trip",{date:Date(Date.now())});
 });
 
@@ -73,6 +72,8 @@ router.post("/my-trip/:id/edit", protectRoute, (req, res) => {
   const ticket_price_return = req.body.ticket_price_return;
   const ticketUrl_go = req.body.ticketUrl_go;
   const ticket_price_go = req.body.ticket_price_go;
+  const notes = req.body.notes;
+  const necessaryThings = req.body.necessaryThings;
 
   // userOwner: [req.session.currentUser._id],
   const data = {
@@ -104,7 +105,9 @@ router.post("/my-trip/:id/edit", protectRoute, (req, res) => {
         city: accommodations_city
       }
     },
-    activities: activity
+    activities: activity,
+    notes,
+    necessaryThings
   };
 
   tripModel
@@ -137,6 +140,8 @@ router.post("/create-a-trip", protectRoute, (req, res,next) => {
   const ticket_price_return = req.body.ticket_price_return;
   const ticketUrl_go = req.body.ticketUrl_go;
   const ticket_price_go = req.body.ticket_price_go;
+  const notes = req.body.notes;
+  const necessaryThings = req.body.necessaryThings;
 
   const data = {
     userOwner: [req.session.currentUser._id],
@@ -168,9 +173,10 @@ router.post("/create-a-trip", protectRoute, (req, res,next) => {
         city: accommodations_city
       }
     },
-    activities: activity
+    activities: activity,
+    notes,
+    necessaryThings
   };
-  //"necessaryDocuments": ticketUrl,
   console.log(data);
 
   tripModel

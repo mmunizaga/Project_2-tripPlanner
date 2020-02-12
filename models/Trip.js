@@ -36,7 +36,8 @@ const tripSchema = new Schema ({
             city: String,
         },
     },
-    necessaryDocuments: [String],
+    notes: String,
+    necessaryThings: [String],
     activities:[String],
     image: {
         type: String,

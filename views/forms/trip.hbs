@@ -11,11 +11,14 @@
                     <label for="dateDepart">When go:</label>
                     <input type="datetime-local" id="dateDepart" name="dateDepart" value="{{#now}}{{/now}}"
                         min="2020-01-07T00:00" max="2050-06-14T00:00">
-                    <label for="fromCity">From city :</label>
+                    <label for="fromCity">From :</label>
+                    <br>
                     <input class="input" name="fromCity" type="text" value="Paris">
+                    
                     <label for="fromCountry">country :</label>
+                    <br>
                     <input class="input" name="fromCountry" type="text" value="France">
-
+<hr>
                     <h3>Transport</h3>
                     <fieldset>
                         <legend>Go:</legend>
@@ -63,21 +66,22 @@
                     <label id="ticketUrl_go" for="ticketUrl_go">Ticket number</label>
                     <input class="input" name="ticketUrl_go" type="text" value="http://">
                     <input class="input" name="ticketUrl_go" type="text" value="http://">
-
+<br>
                     <label for="ticket_price_go">Price</label>
                     <input class="input" name="ticket_price_go" type="number" value="100">
 
-                    </div>
+                </div>
                 <div class="inside-box to-visit">
                     <h3>To visit</h3>
                     <label for="dateArrive">When back:</label>
                     <input type="datetime-local" id="dateArrive" name="dateArrive" value="2020-06-12T19:30"
                         min="2020-01-07T00:00" max="2050-06-14T00:00">
-                    <label for="toCity">to :</label>
+                    <label for="toCity">to :</label><br>
                     <input class="input" name="toCity" type="text" value="Santiago">
-                    <label for="toCountry">country :</label>
-                    <input class="input" name="toCountry" type="text" value="Chili">
-<fieldset>
+                    <label for="toCountry">country :</label><br>
+                    <input class="input" name="toCountry" type="text" value="Chili"><hr>
+                    <h3>_</h3>
+                    <fieldset>
                         <legend>Return:</legend>
 
                         <div>
@@ -124,10 +128,10 @@
                     <label id="ticketUrl_return" for="ticketUrl_return">Ticket number</label>
                     <input class="input" name="ticketUrl_return" type="text" value="http://">
                     <input class="input" name="ticketUrl_return" type="text" value="http://">
-
+<br>
                     <label for="ticket_price_return">Price</label>
                     <input class="input" name="ticket_price_return" type="number" value="80">
-                
+
                 </div>
             </div>
             <div class="box flex">
@@ -151,29 +155,49 @@
                         <h4>Adress</h4>
                         <label for="accommodations_number">number</label>
                         <input class="input" name="accommodations_number" type="number" value="3">
+<br>
+                        
                         <label for="accommodations_street_type">ex. rue, boulevard, avenue</label>
                         <input class="input" name="accommodations_street_type" type="text" value="caye">
+<br>
+                        
                         <label for="accommodations_street">name of the street</label>
                         <input class="input" name="accommodations_street" type="text" value="Las condes">
+<br>
+                        
                         <label for="accommodations_city">city</label>
                         <input class="input" name="accommodations_city" type="text" value="Santiago">
                     </div>
-
+<hr>
                     <label for="accommodations_url">url link</label>
                     <input class="input" name="accommodations_url" type="text" value="http://">
-
+<br>
                     <label for="accommodations_price">Price</label>
                     <input class="input" name="accommodations_price" type="number" value="100"><span> EUR</span>
 
-
                 </div>
-               
+
             </div>
             <div class="box flex">
                 <div class="inside-box activities">
-                    <label id="activity" for="activity">activities :</label>
-                    <input class="input" name="activity" type="text" value="Eiffel Tower">
-                    <input class="input" name="activity" type="text" value="Eiffel Tower">
+                    <h3>Activities</h3>
+                    <label id="activity" for="activity"></label></h3>
+                    <input class="input" name="activity" type="text" value="Eiffel Tower"><br>
+                    <input class="input" name="activity" type="text" value="Eiffel Tower"><br>
+                    <input class="input" name="activity" type="text" value="Eiffel Tower"><br>
+                    <input class="input" name="activity" type="text" value="Eiffel Tower"><br>
+<hr>
+<h3>Don't forget</h3>
+                    <label id="necessaryThings" for="necessaryThings"></label>
+                    <input class="input" name="necessaryThings" type="text" value="ID">
+                    <input class="input" name="necessaryThings" type="text" value="suncream">
+                    <input class="input" name="necessaryThings" type="text" value="palms">
+                    <input class="input" name="necessaryThings" type="text" value="sunglasses">
+<hr>
+<h3>Notes</h3>
+                    <label id="notes" for="notes"></label>
+                    <textarea id="notes" name="notes" rows="5" cols="45">I'm exciting to discover this country, the sun is my lover and ...
+                    </textarea>
                 </div>
             </div>
         </div>

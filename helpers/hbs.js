@@ -79,5 +79,5 @@ hbs.registerHelper("isChecked", function(lvalue, arrvalue) {
 });
 
 hbs.registerHelper("arrayElement", function(array, index) {
-  return array[index];
+  return array[index] ? array[index] : "";
 });

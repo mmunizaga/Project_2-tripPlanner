@@ -77,7 +77,7 @@
                         value="{{#arrayElement trip.cityOrigin.transportUrl 0}}{{/arrayElement}}">
                     <input class="input" name="ticketUrl_go" type="text"
                         value="{{#arrayElement trip.cityToVisit.transportUrl 1}}{{/arrayElement}}">
-
+<br>
                     <label for="ticket_price_go">Price</label>
                     <input class="input" name="ticket_price_go" type="number"
                         value="{{trip.cityOrigin.transport_price}}">
@@ -88,10 +88,11 @@
                     <label for="dateArrive">When back:</label>
                     <input type="datetime-local" id="dateArrive" name="dateArrive" value="{{#format-date trip.cityToVisit.date}}{{/format-date}}"
                         min="2020-01-07T00:00" max="2050-06-14T00:00">
-                    <label for="toCity">to :</label>
+                    <label for="toCity">to :</label><br>
                     <input class="input" name="toCity" type="text" value="{{trip.cityToVisit.city}}">
                     <label for="toCountry">country :</label>
-                    <input class="input" name="toCountry" type="text" value="{{trip.cityToVisit.country}}">
+                    <input class="input" name="toCountry" type="text" value="{{trip.cityToVisit.country}}"><br>
+                    <h3>_</h3>
                     <fieldset>
                         <legend>Return:</legend>
 
@@ -149,7 +150,7 @@
                         value="{{#arrayElement trip.cityToVisit.transportUrl 0}}{{/arrayElement}}">
                     <input class="input" name="ticketUrl_return" type="text"
                         value="{{#arrayElement trip.cityToVisit.transportUrl 1}}{{/arrayElement}}">
-
+<br>
                     <label for="ticket_price_return">Price</label>
                     <input class="input" name="ticket_price_return" type="number"
                         value="{{trip.cityToVisit.transport_price}}">
@@ -195,13 +196,13 @@
                         <h4>Adress</h4>
                         <label for="accommodations_number">number</label>
                         <input class="input" name="accommodations_number" type="number"
-                            value="{{trip.accommodations.accommodations_address.number}}">
+                            value="{{trip.accommodations.accommodations_address.number}}"><br>
                         <label for="accommodations_street_type">ex. rue, boulevard, avenue</label>
                         <input class="input" name="accommodations_street_type" type="text"
-                            value="{{trip.accommodations.accommodations_address.street}}">
+                            value="{{trip.accommodations.accommodations_address.street}}"><br>
                         <label for="accommodations_street">name of the street</label>
                         <input class="input" name="accommodations_street" type="text"
-                            value="{{trip.accommodations.accommodations_address.street_type}}">
+                            value="{{trip.accommodations.accommodations_address.street_type}}"><br>
                         <label for="accommodations_city">city</label>
                         <input class="input" name="accommodations_city" type="text"
                             value="{{trip.accommodations.accommodations_address.city}}">
@@ -221,14 +222,32 @@
             </div>
             <div class="box flex">
                 <div class="inside-box activities">
-                    <label id="activity" for="activity">activities :</label>
+                    <h3>Activities</h3>
+                    <label id="activity" for="activity"></label>
                     <input class="input" name="activity" type="text"
                         value="{{#arrayElement trip.activities 0}}{{/arrayElement}}">
                     <input class="input" name="activity" type="text"
                         value="{{#arrayElement trip.activities 1}}{{/arrayElement}}">
+                    <input class="input" name="activity" type="text"
+                        value="{{#arrayElement trip.activities 2}}{{/arrayElement}}">
+                    <input class="input" name="activity" type="text"
+                        value="{{#arrayElement trip.activities 3}}{{/arrayElement}}">
+                <hr>
+<h3>Don't forget</h3>
+                    <label id="necessaryThings" for="necessaryThings"></label>
+                    <input class="input" name="necessaryThings" type="text" value="{{#arrayElement trip.necessaryThings 0}}{{/arrayElement}}">
+                    <input class="input" name="necessaryThings" type="text" value="{{#arrayElement trip.necessaryThings 1}}{{/arrayElement}}">
+                    <input class="input" name="necessaryThings" type="text" value="{{#arrayElement trip.necessaryThings 2}}{{/arrayElement}}">
+                    <input class="input" name="necessaryThings" type="text" value="{{#arrayElement trip.necessaryThings 3}}{{/arrayElement}}">
+<hr>
+<h3>Notes</h3>
+                    <label id="notes" for="notes"></label>
+                    <textarea id="notes" name="notes" rows="5" cols="45">{{trip.notes}}
+                    </textarea>
+                
                 </div>
             </div>
         </div>
-        <button>Let your trip begin !</button>
+        <button>Edit {{trip.title}} trip's !</button>
     </div>
 </form>

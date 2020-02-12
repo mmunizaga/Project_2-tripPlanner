@@ -25,11 +25,11 @@ app.use(cookieParser());
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
-    cookie: { maxAge: 60000 },
-    store: new MongoStore({
-      mongooseConnection: mongoose.connection,
-      ttl: 24 * 60 * 60
-    }),
+    // cookie: { maxAge: 60000000 },
+    // store: new MongoStore({
+    //   mongooseConnection: mongoose.connection,
+    //   ttl: 24 * 60 * 60
+    // }),
     saveUninitialized: true,
     resave: true
   })

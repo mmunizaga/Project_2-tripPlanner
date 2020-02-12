@@ -1,6 +1,11 @@
 <div>
-    <p>{{trip.title}}</p>
-    <p>{{trip.cityOrigin.date}}</p>
+    <div class="detail title">
+    <div class="detail date-on-title flex"><h2>{{trip.cityOrigin.date}} - {{trip.cityToVisit.date}}</h2>
+    <h2>{{trip.cityOrigin.city}},{{trip.cityOrigin.country}} imageofplane {{trip.cityToVisit.city}},{{trip.cityToVisit.country}}</h2></div>
+    <h1>{{trip.title}}</h1>
+    <h2>image of {{trip.cityOrigin.transport_type}}</h2>
+    <h2>image of {{trip.accommodations.accommodations_type}}</h2>
+    </div>
     <p>{{trip.cityOrigin.city}}</p>
     <p>{{trip.cityOrigin.country}}</p>
 </div>

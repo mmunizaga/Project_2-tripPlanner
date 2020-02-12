@@ -12,6 +12,7 @@ router.get("/all-trips", (req, res) => {
     res.render("all-trips", {
       trips
     });
+  });
 });
 
 router.get("/create-a-trip", (req, res) => {

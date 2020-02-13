@@ -32,28 +32,37 @@
         <div class="details-top flex"></div>
         <h4 class="dates flex"> </h4>
         <h1 class="trip_name flex"></h1>
-        <h4 class="place flex"></h4>
-        <span class="accommodations flex"></span>
-        <span class="transports flex"></span>
+        <h3 class="place flex"></h3>
+        <div class="under_title flex column">
+            <div class="acco_box flex">
+                <span class="accommodations flex"></span>
+                <span class="accommodations_city flex"></span>
+            </div>
+            <a target="_blank" id="tickets" href=""></a><div class="trans_box flex">
+                <span class="transports flex"></span>
+            </div>
+            <h2 class="price flex"></h2>
+        </div>
+        <div class="details-bottom grid">
+
+            <div id="necessaryThings-box" class="box-detail ">
+                <h3>to don't forget</h3>
+                <ul id="necessaryThings">
+                </ul>
+            </div>
+            <div id="activities-box" class="box-detail ">
+                <h3>activities</h3>
+                <ul id="activities">
+                </ul>
+            </div>
+            <div class="box-detail ">
+                <h3>notes</h3>
+                <p id="notes"></p>
+            </div>
+        </div>
+
     </div>
-    <div class="details-bottom">
-        <div id="necessaryThings"class="box-detail">
-            <ul>
-                {{#each necessaryThings}}
-                <li>{{this}}</li>
-                {{/each}}
-            </ul>
-        </div>
-        <div id="activities" class="box-detail">
-            <ul>
-                {{#each activities}}
-                <li>{{this}}</li>
-                {{/each}}
-            </ul>
-        </div>
-        <div id="notes" class="box-detail">
-        </div>
-    </div>
+
 
 </div>
 <div id="image">

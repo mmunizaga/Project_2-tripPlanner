@@ -27,37 +27,62 @@ APIHandler
     var date = formatDate(trip.cityOrigin.date).toDateString() + " | " + formatDate(trip.cityToVisit.date).toDateString()
     var accommodations_type = trip.accommodations.accommodations_type;
     var transports_type = trip.cityOrigin.transport_type;
-    var country = trip.cityToVisit.country;
-    var dateGo = formatDate(trip.cityOrigin.date).toDateString();
-    var dateReturn = formatDate(trip.cityToVisit.date).toDateString();
+    var necessaryThings = trip.necessaryThings;
+    var activities = trip.activities;
+    var notes = trip.notes;
+    var accommodations = {
+    accommodations_url: trip.accommodations.accommodations_url,
+    accommodations_type: trip.accommodations.accommodations_type,
+    accommodations_price: trip.accommodations.accommodations_price,
+    accommodations_address: {
+        number: trip.accommodations.accommodations_address.number,
+        street: trip.accommodations.accommodations_address.street,
+        street_type: trip.accommodations.accommodations_address.street_type,
+        city: trip.accommodations.accommodations_address.city,
+    }
+}
+    var price = trip.cityOrigin.transport_price + trip.cityToVisit.transport_price + accommodations.accommodations_price;
+    var tickets = trip.cityOrigin.transportUrl;
+    
 console.log("--------------------------------------------")
-console.log(trip)
+
     // document.querySelector(".information_trip.city").innerHTML = city;
     document.querySelector("#details .dates").innerHTML = date;
     document.querySelector("#details .trip_name").innerHTML = title;
     document.querySelector("#details .place").innerHTML = from + " | " + to;
-    document.querySelector("#details .accommodations").innerHTML = fontAwersome(accommodations_type);
+    document.querySelector("#details .accommodations").innerHTML = fontAwersome(accommodations_type) +" "+ accommodations_type +" in "+ accommodations.accommodations_address.city;
     document.querySelector("#details .transports").innerHTML = fontAwersome(transports_type);
+    document.querySelector("#tickets").href = tickets? "" : tickets[0];
+    // document.querySelector("#details .accommodations_city").innerHTML =" in "+ accommodations.accommodations_address.city;
+    document.querySelector("#details .price").innerHTML = price + " €";
+    completeList("activities",activities);
+    completeList("necessaryThings",necessaryThings);
+    document.getElementById("notes").innerHTML = notes;
     // document.querySelector(".information_trip .dateGo").innerHTML = dateGo;
     // document.querySelector(".information_trip .dateReturn").innerHTML = dateReturn;
-    document.querySelector("#details").classList.remove("is_hidden");
-    document.querySelector("#details").classList.add("slide-in-left");
-    document.querySelector("#background").classList.add("kenburns-right");
-    document.querySelector("#background").classList.remove("kenburns-left");
+    document.getElementById("details").classList.remove("is_hidden");
+    document.getElementById("details").classList.add("slide-in-left");
+    document.getElementById("background").classList.add("kenburns-right");
+    document.getElementById("background").classList.remove("kenburns-left");
 })
 .catch(apiErr => console.log(apiErr))
 }
 
 function takeOffPreview (   ) { 
-    document.querySelector("#details .dates").innerHTML = "";
-    document.querySelector("#details .trip_name").innerHTML = "";
-    document.querySelector("#details .place").innerHTML = "";
-    document.querySelector("#details .transports").innerHTML = "";
-     
-    document.querySelector("#details").classList.add("is_hidden");
-    document.querySelector("#details").classList.remove("slide-in-left");
-    document.querySelector("#background").classList.remove("kenburns-right")
-    document.querySelector("#background").classList.add("kenburns-left");
+    eraseContent([
+    document.querySelector("#details .dates"),
+    document.querySelector("#details .trip_name"),
+    document.querySelector("#details .place"),
+    document.querySelector("#details .transports"),
+    document.getElementById("activities"),
+    document.getElementById("necessaryThings"),
+    document.getElementById("notes"),
+])
+document.querySelector("#tickets").href = ""
+    document.getElementById("details").classList.add("is_hidden");
+    document.getElementById("details").classList.remove("slide-in-left");
+    document.getElementById("background").classList.remove("kenburns-right")
+    document.getElementById("background").classList.add("kenburns-left");
 
 
 
@@ -65,6 +90,10 @@ function takeOffPreview (   ) {
     // document.querySelector(".information_trip .dateGo").innerHTML="";
     // document.querySelector(".information_trip .dateReturn").innerHTML="";
 }
+
+const eraseContent = ArrElement => ArrElement.forEach(element => element.innerHTML = "")
+
+const completeList  = (nameArr,arr) => arr.forEach((a)=> document.getElementById(nameArr).innerHTML += ("<li>"+a+"</li>"))
 
 function fontAwersome(option) {
     let renderAwersome = ""
@@ -85,7 +114,6 @@ function fontAwersome(option) {
     if (a === "train") renderAwersome+='<i class="fas fa-train"></i>'
     if (a === "bus") renderAwersome+='<i class="fas fa-bus"></i>'
     if (a === "plane") renderAwersome+='<i class="fas fa-plane"></i>'})
-    console.log(renderAwersome);
     
     return renderAwersome;
   };

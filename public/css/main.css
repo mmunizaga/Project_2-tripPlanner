@@ -1,6 +1,6 @@
 /* FONT:
 titles: font-family: 'Raleway', sans-serif;
-paragraph: font-family: 'Montserrat', sans-serif; */
+paragraph: font-family: 'Montserrat', sansfont-family: 'Raleway', sans-serif;-serif; */
 body {
   height: 100%;
   width:100%
@@ -39,7 +39,7 @@ p {
 }
 
 .main-container {
-  margin-top: 70px;
+  margin-top: 50px;
   position: relative;
   height:90vh
 }
@@ -135,6 +135,7 @@ p {
 
 /* NAV-BAR */
 .header {
+  overflow-y: hidden;
   width: 100%;
   position: fixed;
   z-index: 100000;
@@ -201,40 +202,13 @@ p {
 }
 
 /* TRIP FORM */
-.grid {
-  display: -ms-grid;
-  display: grid;
-}
+
 
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-
-/* .box-container {
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
- grid-template-rows: 60vw 10vw; 
-  -webkit-column-gap: 10vw;
-          column-gap: 10vw;
-} */
-
-.box {
-  border: 1px solid;
-}
-
-.form-page {
-  margin: 0 3vw;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  height: 90vh;
-}
-
 
 /* ALL-TRIPS PAGE */
 .trip_all {
@@ -321,13 +295,15 @@ width: 10000px;} */
 }
 
 #details {
+  color: rgba(80, 81, 79, 1);
   position: fixed;
   left: 260px;
   z-index: 1000;
   background-color: rgba(255, 224, 102, 0.8);
   width: 40vw;
   height: 100vh;
-  padding-left: 10px;
+  padding: 1vw;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .row {
@@ -341,6 +317,9 @@ width: 10000px;} */
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.column{
+  align-items: column;
 }
 
 .is_hidden {
@@ -517,6 +496,63 @@ justify-content: space-around;
   grid-template-rows: 1fr;
 }
 
+
+.details-bottom.grid{
+  margin: 5vh 0;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2vw;
+}
+
+.details-bottom li{
+  list-style: inside;
+  list-style-type: none;
+  text-align: center;
+}
+
+
+.acco_box.flex{
+position: absolute;
+top:0;
+margin-top: 1vw;
+}
+
+.#tickets{
+  text-decoration: none;
+}
+
+.trans_box{
+  position: absolute;
+  top:0;
+  right: 0;
+  font-size: 2em;
+  margin: 1vw;
+  letter-spacing: 2vw;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+
+}
+#details .price.flex{
+  position: absolute;
+  bottom:6vh;
+  right: 0; 
+  margin: 1vw;
+
+}
+.box-detail{
+  border: none;
+  border-radius: 5px;
+  /* background-color: rgba(255, 224, 102, 0.753); */
+  box-shadow: 10px 10px 45px 6px rgba(0,0,0,0.75);
+  padding: 1vw;
+  overflow-x: hidden;
+  
+}
+.box-detail h3{
+  margin-bottom: 1vh;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
 @media only screen and (max-width: 700px) {
   .side-by-side {
     grid-template-columns: 1fr;
@@ -535,4 +571,28 @@ justify-content: space-around;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
+}
+
+@media only screen and (max-width: 450px) {
+  
+  #timeline{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    max-height: 150px;
+  }
+  .trips-container{
+    padding: 8vw;
+    /* background-color: blue; */
+    width: 100vw;
+  }
+
+  #image{
+    visibility: hidden;
+  }
+  .image-container{
+    width: 100px;
+    height: 100px;
+  }
 }

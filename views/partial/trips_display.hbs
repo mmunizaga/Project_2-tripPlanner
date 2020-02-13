@@ -1,4 +1,4 @@
-<div id="all" class="flex">
+<div id="all" class="">
     <div id="timeline" class="trips-container start ">
         {{#each trips}}
         <div class="trip-container flex vcenter">
@@ -10,7 +10,9 @@
                     </a></div>
                 <div class="destination-container">
                     <h4>{{this.cityOrigin.city}} - {{this.cityToVisit.city}}</h4></a>
+                <i id="{{this._id}}" class="fas fa-angle-down"></i>
                 </div>
+                 
             </div>
 
         </div>
@@ -23,6 +25,7 @@
                         <h3>Create a trip !</h3>
                     </a></div>
                 <div class="destination-container">
+                    <i id="{{this._id}}" class="fas fa-angle-down"></i>
                 </div>
             </div>
         </div>
@@ -43,7 +46,11 @@
             </div>
             <h2 class="price flex"></h2>
         </div>
-        <div class="details-bottom grid">
+        {{!-- <div class="line flex">
+        <hr id="line" class="flex vcenter"><span class="flex">By </span>
+        <span class="flex username">Text</span>
+        </div> --}}
+        <div class="details-bottom grid off">
 
             <div id="necessaryThings-box" class="box-detail ">
                 <h3>to don't forget</h3>

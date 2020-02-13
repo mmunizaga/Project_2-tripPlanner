@@ -1,17 +1,18 @@
 const express = require("express");
 const router = new express.Router();
 const tripModel = require("./../models/Trip");
+// const userModel = require("./../models/User");
 const protectRoute = require("./../middlewares/protectRoute");
 const moment = require("moment");
 
-router.get("/preview-trip:id", (req, res) => {
-    tripModel
+router.get("/preview-trip/:id", (req, res) => {
+  tripModel
     .findById(req.params.id)
-    .then((dbRes) => {
-        res.json(dbRes);
-        console.log(dbRes);
+    // .populate("userOwner")
+    .then(dbRes => {
+      res.json(dbRes);
     })
-    .catch((dbErr) => console.log(dbErr));
-})
+    .catch(dbErr => console.log(dbErr));
+});
 
 module.exports = router;

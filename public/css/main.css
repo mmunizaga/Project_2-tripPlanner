@@ -626,6 +626,12 @@ margin-top: 1vw;
   grid-template-rows: auto auto;
 }
 
+.adress {
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-template-rows: repeat(6,1fr);
+}
+
 .fas.fa-angle-down{
   visibility: hidden;
   font-size: 2em;

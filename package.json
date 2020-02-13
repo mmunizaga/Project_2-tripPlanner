@@ -32,6 +32,8 @@
     "moment": "^2.24.0",
     "mongoose": "^5.8.11",
     "multer": "^1.4.2",
-    "multer-storage-cloudinary": "^2.2.1"
+    "multer-storage-cloudinary": "^2.2.1",
+    "node-fetch": "^2.6.0",
+    "unsplash-js": "^6.0.0"
   }
 }

@@ -2,8 +2,6 @@ require("dotenv").config();
 require("./config/mongodb");
 require("./helpers/hbs");
 
-// KEY unsplash: a9b4eb0f30174b3fe25d5e437111b3802f0d89d1d39a541b0a4012727844bdeb
-
 // base dependencies
 const express = require("express");
 const hbs = require("hbs");

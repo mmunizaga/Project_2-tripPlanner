@@ -20,10 +20,10 @@ const userSchema = new Schema ({
         required: true
     },
     trips:[{type:Schema.Types.ObjectId, ref:"Trip"}],
-    avatar: {
-        type: String,
-        default: "https://www.allthetests.com/quiz22/picture/pic_1171831236_1.png"
-    }
+    // avatar: {
+    //     type: String,
+    //     default: "https://www.allthetests.com/quiz22/picture/pic_1171831236_1.png"
+    // }
 });
 
 const userModel = mongoose.model("User", userSchema);

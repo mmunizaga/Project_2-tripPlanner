@@ -20,7 +20,7 @@ router.get("/all-trips", protectRoute, (req, res) => {
 
 
 router.get("/create-a-trip",protectRoute, (req, res) => {
-  res.render("forms/trip",{date:Date(Date.now())});
+  res.render("forms/trip",{date:Date(Date.now()), scripts: ['countries_validation.js']});
 });
 
 router.get("/my-trip/:id",protectRoute, (req, res) => {
@@ -32,7 +32,7 @@ router.get("/my-trip/:id",protectRoute, (req, res) => {
     .catch(error => console.log(error));
 });
 
-router.get("/my-trip/:id/delete", (req, res) => {
+router.get("/my-trip/:id/delete",protectRoute, (req, res) => {
 
   tripModel
     .findByIdAndDelete(req.params.id)
@@ -43,11 +43,11 @@ router.get("/my-trip/:id/delete", (req, res) => {
     .catch(error => console.log(error));
 });
 
-router.get("/my-trip/:id/edit-my-trip", (req, res) => {
+router.get("/my-trip/:id/edit-my-trip",protectRoute, (req, res) => {
   tripModel
     .findById(req.params.id)
     .then(trip => {
-      res.render("forms/edit-my-trip", { trip });
+      res.render("forms/edit-my-trip", { trip, scripts: ['countries_validation.js'] });
     })
     .catch(error => console.log(error));
 });

@@ -424,6 +424,7 @@ width: 10000px;} */
     opacity: 1;
   }
 }
+
 @keyframes slide-in-bck-center {
   0% {
     -webkit-transform: translateZ(600px);
@@ -437,6 +438,11 @@ width: 10000px;} */
   }
 }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 /* TRIP FORM */
 
 .trip_form {
@@ -676,7 +682,8 @@ hr#line{
     animation: unset;
   }
 
-  #timeline{
+
+.adress {
   display: grid;
   grid-template-columns: 30% auto;
   grid-template-rows: repeat(6,1fr);

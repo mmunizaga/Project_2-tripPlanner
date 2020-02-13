@@ -32,7 +32,7 @@ router.get("/my-trip/:id",protectRoute, (req, res) => {
     .catch(error => console.log(error));
 });
 
-router.get("/my-trip/:id/delete", (req, res) => {
+router.get("/my-trip/:id/delete",protectRoute, (req, res) => {
 
   tripModel
     .findByIdAndDelete(req.params.id)
@@ -43,7 +43,7 @@ router.get("/my-trip/:id/delete", (req, res) => {
     .catch(error => console.log(error));
 });
 
-router.get("/my-trip/:id/edit-my-trip", (req, res) => {
+router.get("/my-trip/:id/edit-my-trip",protectRoute, (req, res) => {
   tripModel
     .findById(req.params.id)
     .then(trip => {

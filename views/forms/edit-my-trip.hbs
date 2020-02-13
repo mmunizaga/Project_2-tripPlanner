@@ -18,55 +18,57 @@
                     <label for="fromCity">City:</label>
                     <input class="input" name="fromCity" type="text" value="{{trip.cityOrigin.city}}">
                     <label for="fromCountry">Country:</label>
-                    <input class="input" name="fromCountry" type="text" value="{{trip.cityOrigin.country}}">
+                    <input class="input country" name="fromCountry" type="text" list="fromCountry" value="{{trip.cityOrigin.country}}">
+                    <datalist class="input listCountry" name="fromCountry" id="fromCountry">
+                    </datalist>
                     </div>
                     <fieldset>
                         <legend>To go:</legend>
 
                         <div>
-                            <input type="checkbox" id="plane" value="plane" name="transport_type_go"
+                            <input type="checkbox" value="plane" name="transport_type_go"
                                 {{#isChecked "plane" trip.cityOrigin.transport_type}} {{/isChecked}}>
                             <label for="plane">plane</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="bus" value="bus" name="transport_type_go"
+                            <input type="checkbox" value="bus" name="transport_type_go"
                                 {{#isChecked "bus" trip.cityOrigin.transport_type}} {{/isChecked}}>
                             <label for="bus">bus</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="car" value="car" name="transport_type_go"
+                            <input type="checkbox" value="car" name="transport_type_go"
                                 {{#isChecked "car" trip.cityOrigin.transport_type}} {{/isChecked}}>
                             <label for="car">car</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="train" value="train" name="transport_type_go"
+                            <input type="checkbox" value="train" name="transport_type_go"
                                 {{#isChecked "train" trip.cityOrigin.transport_type}} {{/isChecked}}>
                             <label for="train">train</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="walk" value="walk" name="transport_type_go"
+                            <input type="checkbox" value="walk" name="transport_type_go"
                                 {{#isChecked "walk" trip.cityOrigin.transport_type}} {{/isChecked}}>
                             <label for="walk">walk</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="motorcycle" value="motorcycle" name="transport_type_go"
+                            <input type="checkbox" value="motorcycle" name="transport_type_go"
                                 {{#isChecked "motorcycle" trip.cityOrigin.transport_type}} {{/isChecked}}>
                             <label for="motorcycle">motorcycle</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="bike" value="bike" name="transport_type_go"
+                            <input type="checkbox" value="bike" name="transport_type_go"
                                 {{#isChecked "bike" trip.cityOrigin.transport_type}} {{/isChecked}}>
                             <label for="bike">bike</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="boat" value="boat" name="transport_type_go"
+                            <input type="checkbox" value="boat" name="transport_type_go"
                                 {{#isChecked "boat" trip.cityOrigin.transport_type}} {{/isChecked}}>
                             <label for="boat">boat</label>
                         </div>
@@ -89,55 +91,57 @@
                     <label for="toCity">City:</label>
                     <input class="input" name="toCity" type="text" value="{{trip.cityToVisit.city}}">
                     <label for="toCountry">Country:</label>
-                    <input class="input" name="toCountry" type="text" value="{{trip.cityToVisit.country}}">
+                    <input class="input country" name="toCountry" type="text" list="fromCountry" value="{{trip.cityToVisit.country}}">
+                    <datalist class="input listCountry" name="fromCountry" id="fromCountry">
+                    </datalist>
                     </div>
                     <fieldset>
                         <legend>To return:</legend>
 
                         <div>
-                            <input type="checkbox" id="plane" value="plane" name="transport_type_return"
+                            <input type="checkbox" value="plane" name="transport_type_return"
                                 {{#isChecked "plane" trip.cityToVisit.transport_type}} {{/isChecked}}>
                             <label for="plane">plane</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="bus" value="bus" name="transport_type_return"
+                            <input type="checkbox" value="bus" name="transport_type_return"
                                 {{#isChecked "bus" trip.cityToVisit.transport_type}} {{/isChecked}}>
                             <label for="bus">bus</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="car" value="car" name="transport_type_return"
+                            <input type="checkbox" value="car" name="transport_type_return"
                                 {{#isChecked "car" trip.cityToVisit.transport_type}} {{/isChecked}}>
                             <label for="car">car</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="train" value="train" name="transport_type_return"
+                            <input type="checkbox" value="train" name="transport_type_return"
                                 {{#isChecked "train" trip.cityToVisit.transport_type}} {{/isChecked}}>
                             <label for="train">train</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="walk" value="walk" name="transport_type_return"
+                            <input type="checkbox" value="walk" name="transport_type_return"
                                 {{#isChecked "walk" trip.cityToVisit.transport_type}} {{/isChecked}}>
                             <label for="walk">walk</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="motorcycle" value="motorcycle" name="transport_type_return"
+                            <input type="checkbox" value="motorcycle" name="transport_type_return"
                                 {{#isChecked "motorcycle" trip.cityToVisit.transport_type}} {{/isChecked}}>
                             <label for="motorcycle">motorcycle</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="bike" value="bike" name="transport_type_return"
+                            <input type="checkbox" value="bike" name="transport_type_return"
                                 {{#isChecked "bike" trip.cityToVisit.transport_type}} {{/isChecked}}>
                             <label for="bike">bike</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="boat" value="boat" name="transport_type_return"
+                            <input type="checkbox" value="boat" name="transport_type_return"
                                 {{#isChecked "boat" trip.cityToVisit.transport_type}} {{/isChecked}}>
                             <label for="boat">boat</label>
                         </div>

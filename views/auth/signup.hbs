@@ -1,6 +1,6 @@
 <form method="post" action="/signup" class="form_auth" >
 {{!-- enctype="multipart/form-data" --}}
-    <h1 class="title">Sign up</h1>
+    <h1>Sign up</h1>
     <hr>
     {{#if errorMessage}}
         <div class="error-message">{{ errorMessage }}</div>
@@ -13,12 +13,12 @@
     <input class="input" name="email" type="text" value="test@yopmail.com" required>
     <label for="password">password</label>
     <input class="input" name="password" type="password" value="123" required>
-    <div class="row">
+
+    {{!-- <div class="row">
         <label for="avatar">avatar</label>
-        {{!-- <i id="avatar-icon" class="is-clickable toggle-active fa fa-user fa-lg"></i> --}}
-        {{!-- <input id="input-file" type="file" class="is-hidden" name="avatar"> --}}
         <input id="input-file" type="file"  name="avatar">
-    </div>
+    </div> --}}
+
     <button class="btn">Go !</button>
     <hr>
     <p>

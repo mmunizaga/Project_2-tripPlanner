@@ -16,7 +16,7 @@ const myUnsplash = require("../config/unsplash");
     .then(json => {
       console.log(json);
       // res.send(json.results[0].urls.regular);
-      res.send(`<img src="${json.results[0].urls.full}" alt=""></img>`);
+      res.render("home");
     });
 });
 

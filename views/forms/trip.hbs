@@ -1,7 +1,7 @@
 <form method="post" action="create-a-trip" class="trip_form">
     <div class="form-page flex">
         <div class="title">
-            <input class="input" name="trip_name" type="text" value="My Santiago Trip">
+            <input class="input" name="trip_name" type="text" value="My Trip Name">
         </div>
         <div class="box-container grid">
             <div class="box grid side-by-side">
@@ -12,9 +12,9 @@
                     <input type="datetime-local" id="dateDepart" name="dateDepart" value="{{#now}}{{/now}}"
                         min="2020-01-07T00:00" max="2050-06-14T00:00">
                     <label for="fromCity">City:</label>
-                    <input class="input" name="fromCity" type="text" value="Paris">
+                    <input class="input" name="fromCity" type="text">
                     <label for="fromCountry">Country:</label>
-                    <input class="input country" name="fromCountry" type="text" list="fromCountry">
+                    <input class="input country" name="fromCountry" type="text" list="fromCountry" required>
                     <datalist class="input listCountry" name="fromCountry" id="fromCountry">
                       
                     </datalist>
@@ -64,9 +64,9 @@
                     </fieldset>
                     <div class="wrap-2">
                     <label id="ticketUrl_go" for="ticketUrl_go">Ticket number</label>
-                    <input class="input" name="ticketUrl_go" type="text" value="http://">
+                    <input class="input" name="ticketUrl_go" type="text" placeholder="http://">
                     <label for="ticket_price_go">Price</label>
-                    <input class="input" name="ticket_price_go" type="number" value="100">
+                    <input class="input" name="ticket_price_go" type="number">
                     </div>
                 </div>
                 <div class="inside-box to-visit">
@@ -76,9 +76,9 @@
                     <input type="datetime-local" id="dateArrive" name="dateArrive" value="2020-06-12T19:30"
                         min="2020-01-07T00:00" max="2050-06-14T00:00">
                     <label for="toCity">City:</label>
-                    <input class="input" name="toCity" type="text" value="Santiago">
+                    <input class="input" name="toCity" type="text">
                     <label for="toCountry">Country:</label>
-                    <input class="input country" name="toCountry" type="text" list="fromCountry">
+                    <input class="input country" name="toCountry" type="text" list="fromCountry"required>
                     <datalist class="input listCountry" name="fromCountry" id="fromCountry">
                     </datalist>
                     </div>
@@ -127,9 +127,9 @@
                     </fieldset>
                     <div class="wrap-2">
                     <label id="ticketUrl_return" for="ticketUrl_return">Ticket number</label>
-                    <input class="input" name="ticketUrl_return" type="text" value="http://">
+                    <input class="input" name="ticketUrl_return" type="text" placeholder="http://">
                     <label for="ticket_price_return">Price</label>
-                    <input class="input" name="ticket_price_return" type="number" value="80">
+                    <input class="input" name="ticket_price_return" type="number">
                     </div>
                 </div>
             </div>
@@ -152,17 +152,17 @@
                     <h4>Adress:</h4>
                     <div class="adress">
                         <label for="accommodations_number">number</label>
-                        <input class="input" name="accommodations_number" type="number" value="3">
+                        <input class="input" name="accommodations_number" type="number">
                         <label for="accommodations_street_type">Type of street:</label>
-                        <input class="input" name="accommodations_street_type" type="text" value="caye">
+                        <input class="input" name="accommodations_street_type" type="text">
                         <label for="accommodations_street">Street name:</label>
-                        <input class="input" name="accommodations_street" type="text" value="Las condes">
+                        <input class="input" name="accommodations_street" type="text">
                         <label for="accommodations_city">City:</label>
-                        <input class="input" name="accommodations_city" type="text" value="Santiago">
+                        <input class="input" name="accommodations_city" type="text">
                         <label for="accommodations_url">URL link:</label>
-                        <input class="input" name="accommodations_url" type="text" value="http://">
+                        <input class="input" name="accommodations_url" type="text" placeholder="http://">
                         <label for="accommodations_price">Price:</label>
-                        <div><input class="input" name="accommodations_price" type="number" value="100"><span> EUR</span></div>
+                        <div><input class="input" name="accommodations_price" type="number"><span> EUR</span></div>
                     </div>
 
             </div>
@@ -170,26 +170,26 @@
                 <div class="inside-box activities">
                     <h3>Activities</h3>
                     <div class="activities-list">
-                    <input class="input" name="activity" type="text" value="Eiffel Tower">
-                    <input class="input" name="activity" type="text" value="Eiffel Tower">
-                    <input class="input" name="activity" type="text" value="Eiffel Tower">
-                    <input class="input" name="activity" type="text" value="Eiffel Tower">
-                    <input class="input" name="activity" type="text" value="Eiffel Tower">
-                    <input class="input" name="activity" type="text" value="Eiffel Tower">
-                    <input class="input" name="activity" type="text" value="Eiffel Tower">
-                    <input class="input" name="activity" type="text" value="Eiffel Tower">
-                    <input class="input" name="activity" type="text" value="Eiffel Tower">
-                    <input class="input" name="activity" type="text" value="Eiffel Tower">
+                    <input class="input" name="activity" type="text" placeholder="example: Eiffel Tower">
+                    <input class="input" name="activity" type="text">
+                    <input class="input" name="activity" type="text">
+                    <input class="input" name="activity" type="text">
+                    <input class="input" name="activity" type="text">
+                    <input class="input" name="activity" type="text">
+                    <input class="input" name="activity" type="text">
+                    <input class="input" name="activity" type="text">
+                    <input class="input" name="activity" type="text">
+                    <input class="input" name="activity" type="text">
                     </div>
 
                 <h3>Don't forget</h3>
                     <div class="dont-forget">
-                    <input class="input" name="necessaryThings" type="text" value="ID">
-                    <input class="input" name="necessaryThings" type="text" value="suncream">
-                    <input class="input" name="necessaryThings" type="text" value="palms">
-                    <input class="input" name="necessaryThings" type="text" value="sunglasses">
-                    <input class="input" name="necessaryThings" type="text" value="palms">
-                    <input class="input" name="necessaryThings" type="text" value="sunglasses">
+                    <input class="input" name="necessaryThings" type="text" placeholder="example: sunglasses">
+                    <input class="input" name="necessaryThings" type="text">
+                    <input class="input" name="necessaryThings" type="text">
+                    <input class="input" name="necessaryThings" type="text">
+                    <input class="input" name="necessaryThings" type="text">
+                    <input class="input" name="necessaryThings" type="text">
                     </div>
 
                 <h3>Notes</h3>

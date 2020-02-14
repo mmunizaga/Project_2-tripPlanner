@@ -1,6 +1,6 @@
 /* FONT:
 titles: font-family: 'Raleway', sans-serif;
-paragraph: font-family: 'Montserrat', sansfont-family: 'Raleway', sans-serif;-serif; */
+paragraph: font-family: 'Montserrat', sans-serif; */
 body {
   height: 100%;
   width: 100%;
@@ -551,6 +551,19 @@ legend {
     0.05em -0.05em rgb(45, 46, 45), 0.05em 0.05em rgb(45, 46, 45);
 }
 
+.website_name{
+  padding: 20px;
+  border-radius: 20px;
+  position: fixed;
+  left : 45vw;
+  top : 40vh;
+  font-size: 6em;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 10000000;
+  color: rgba(80, 81, 79, 1);
+  background-color: rgba(255,255,255,0.85);
+}
+
 .side-by-side {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -666,6 +679,17 @@ hr#line {
 }
 
 @media only screen and (max-width: 450px) {
+.website_name{
+  text-align: center;
+
+top: 26vh;
+left: 0;
+font-size: 4em;
+padding: 40px 80px;
+background-color: rgba(255,255,255,1);
+
+}
+
   #timeline {
     min-height: unset;
     padding-top: 5vw;

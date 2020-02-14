@@ -3,7 +3,7 @@
 // })
 
 const APIHandler = axios.create({
-    baseURL : 'https://trip-plan-manager.herokuapp.com/'
+    baseURL : 'https://world-trip.herokuapp.com/all-trips'
 })
 
 export default APIHandler;

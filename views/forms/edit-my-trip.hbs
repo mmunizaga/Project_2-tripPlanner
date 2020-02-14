@@ -1,13 +1,10 @@
 <form method="post" action="/my-trip/{{trip._id}}/edit" class="trip_form">
-    <ul>
-
-    </ul>
     <div class="form-page flex">
         <div class="title">
             <input class="input" name="trip_name" type="text" value="{{trip.title}}">
         </div>
         <div class="box-container grid">
-            <div class="box flex side-by-side">
+            <div class="box grid side-by-side">
                 <div class="inside-box origin">
                     <h3>Depart</h3>
                     <div class="wrap-1">
@@ -255,6 +252,9 @@
                 </div>
             </div>
         </div>
-        <button class="begin-trip-btn">Edit {{trip.title}} trip's !</button>
+        <div class="btns">
+        <button class="edit-btn">Edit</button>
+        <div class="delete-btn"><a href="/my-trip/{{trip._id}}/delete">Delete</a></div>
+        </div>
     </div>
 </form>

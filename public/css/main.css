@@ -235,7 +235,7 @@ span {
 
 .trips-container {
   background-color: #fff;
-  height: infinite;
+  height: 200vh;
   width: 200px;
   font-family: "Montserrat", sans-serif;
   padding: 0 3vw;
@@ -592,10 +592,10 @@ legend {
 }
 
 .box-detail {
-  border: none;
+  border: 1px rgba(0, 0, 0, 0.75) solid;
   border-radius: 5px;
   /* background-color: rgba(255, 224, 102, 0.753); */
-  box-shadow: 10px 10px 45px 6px rgba(0, 0, 0, 0.75);
+  /* box-shadow: 10px 10px 45px 6px rgba(0, 0, 0, 0.75); */
   padding: 1vw;
   overflow-x: hidden;
 }
@@ -664,7 +664,10 @@ hr#line {
     overflow-y: hidden;
     max-height: 190px;
   }
-
+  .box-detail{
+    font-size: 0.8em;
+    
+  }
   #all {
     display: block;
   }
@@ -722,6 +725,10 @@ hr#line {
     -webkit-animation: unset;
     animation: unset;
   }
+
+h1{
+  font-size: 2em
+}
 
   #details h1 a {
     font-size: 1em;
@@ -783,8 +790,8 @@ hr#line {
   background-color: rgba(255, 224, 102, 0.9);
   padding: 1vw;
   font-family: "Montserrat", sans-serif;
-  box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01),
-    0px 0px 8px rgba(0, 0, 0, 0.2);
+  /* box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01),
+    0px 0px 8px rgba(0, 0, 0, 0.2); */
 }
 
 .begin-trip-btn {

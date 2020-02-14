@@ -50,6 +50,7 @@ function displayPreview(e) {
         trip.cityToVisit.transport_price +
         accommodations.accommodations_price;
       var tickets = trip.cityOrigin.transportUrl;
+      var background = trip.image[1];
     //   var username = trip.userOwner[0].username;
 
       // document.querySelector(".information_trip.city").innerHTML = city;
@@ -71,7 +72,7 @@ function displayPreview(e) {
       completeList("necessaryThings", necessaryThings);
       document.getElementById("notes").innerHTML = notes;
     //   document.querySelector(".flex.username").innerHTML = username;
-
+    document.getElementById("background").src = background
     })
     .catch(apiErr => console.log(apiErr));
 }

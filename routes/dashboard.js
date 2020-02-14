@@ -3,51 +3,56 @@ const router = new express.Router();
 const tripModel = require("./../models/Trip");
 const protectRoute = require("./../middlewares/protectRoute");
 const moment = require("moment");
-
+const myUnsplash = require("../config/unsplash");
+const unsplash = require("unsplash-js");
 
 router.get("/all-trips", protectRoute, (req, res) => {
-  tripModel
-  .find({userOwner:req.session.currentUser._id})
-  .then(trips => {
-    console.log("My trips are :")
-    trips.forEach((trip,i)=>console.log(i,") ",trip.title))
+  tripModel.find({ userOwner: req.session.currentUser._id }).then(trips => {
+    console.log("My trips are :");
+    trips.forEach((trip, i) => console.log(i, ") ", trip.title));
     res.render("all-trips", {
       trips,
-      scripts:["trip-display.js"]
+      scripts: ["trip-display.js"]
     });
   });
 });
 
-
-router.get("/create-a-trip",protectRoute, (req, res) => {
-  res.render("forms/trip",{date:Date(Date.now()), scripts: ['countries_validation.js']});
+router.get("/create-a-trip", protectRoute, (req, res) => {
+  res.render("forms/trip", {
+    date: Date(Date.now()),
+    scripts: ["countries_validation.js"]
+  });
 });
 
-router.get("/my-trip/:id",protectRoute, (req, res) => {
+router.get("/my-trip/:id", protectRoute, (req, res) => {
   tripModel
     .findById(req.params.id)
-    .then(trip => {   
+    .then(trip => {
       res.render("my-trip", { trip });
     })
     .catch(error => console.log(error));
 });
 
-router.get("/my-trip/:id/delete",protectRoute, (req, res) => {
-
+router.get("/my-trip/:id/delete", protectRoute, (req, res) => {
   tripModel
     .findByIdAndDelete(req.params.id)
     .then(trip => {
-      console.log(trip.name ? " haven't been deleted" : "trip have been deleted");
+      console.log(
+        trip.name ? " haven't been deleted" : "trip have been deleted"
+      );
       res.redirect("/all-trips");
     })
     .catch(error => console.log(error));
 });
 
-router.get("/my-trip/:id/edit-my-trip",protectRoute, (req, res) => {
+router.get("/my-trip/:id/edit-my-trip", protectRoute, (req, res) => {
   tripModel
     .findById(req.params.id)
     .then(trip => {
-      res.render("forms/edit-my-trip", { trip, scripts: ['countries_validation.js'] });
+      res.render("forms/edit-my-trip", {
+        trip,
+        scripts: ["countries_validation.js"]
+      });
     })
     .catch(error => console.log(error));
 });
@@ -76,11 +81,11 @@ router.post("/my-trip/:id/edit", protectRoute, (req, res) => {
   const ticket_price_go = req.body.ticket_price_go;
   const notes = req.body.notes;
   const necessaryThings = req.body.necessaryThings;
-
+  // const image =
   // userOwner: [req.session.currentUser._id],
   const data = {
     title: trip_name,
-      cityOrigin: {
+    cityOrigin: {
       date: dateDepart,
       city: fromCity,
       country: fromCountry,
@@ -110,6 +115,7 @@ router.post("/my-trip/:id/edit", protectRoute, (req, res) => {
     activities: activity,
     notes,
     necessaryThings
+    // image
   };
 
   tripModel
@@ -120,7 +126,7 @@ router.post("/my-trip/:id/edit", protectRoute, (req, res) => {
     .catch(error => console.log(error));
 });
 
-router.post("/create-a-trip", protectRoute, (req, res,next) => {
+router.post("/create-a-trip", protectRoute, (req, res, next) => {
   const trip_name = req.body.trip_name;
   const dateDepart = req.body.dateDepart;
   const dateArrive = req.body.dateArrive;
@@ -179,19 +185,29 @@ router.post("/create-a-trip", protectRoute, (req, res,next) => {
     notes,
     necessaryThings
   };
-  console.log(data);
 
-  tripModel
-    .create(data)
-    .then(() => {
-      console.log(trip_name, " have been created");
-      res.redirect("/all-trips");
-    })
-    .catch(error => {
-      console.log(
-        ">>>>>>>>>>>>>>>>>>>>No new trip have been created<<<<<<<<<<<<<<<<<<<<<<<<<<<<",
-        error
-      );
+  myUnsplash.search
+    .photos(toCountry, 1, 2, { orientation: "portrait" })
+    .then(unsplash.toJson)
+    .then(json => {
+      data.image = [json.results[0].urls.thumb,json.results[1].urls.regular];
+      data.imageColor = [json.results[0].color,json.results[1].color];
+      
+
+      tripModel
+        .create(data)
+        .then(() => {
+          console.log(trip_name, " have been created");
+          res.redirect("/all-trips");
+        })
+        .catch(error => {
+          console.log(
+            ">>>>>>>>>>>>>>>>>>>>No new trip have been created<<<<<<<<<<<<<<<<<<<<<<<<<<<<",
+            error
+          );
+        });
+
+      // res.send(`<img src="${json.results[0].urls.regular}" alt=""></img>`);
     });
 });
 

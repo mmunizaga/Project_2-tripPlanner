@@ -3,9 +3,10 @@
         {{#each trips}}
         <div class="trip-container flex vcenter">
             <div class="left">
-                <div class="image-container"><a href="/my-trip/{{this._id}}"><img src="{{this.image}}"
+                <div class="image-container"><a href="/my-trip/{{trip._id}}/edit-my-trip"><img src="{{#arrayElement this.image 0}}
+        {{/arrayElement}}"
                             id="{{this._id}}"></a></div>
-                <div class="title-container"><a href="/my-trip/{{this._id}}">
+                <div class="title-container"><a href="/my-trip/{{trip._id}}/edit-my-trip">
                         <h3>{{this.title}}</h3>
                     </a></div>
                 <div class="destination-container">
@@ -72,12 +73,14 @@
 
 
 </div>
+<p>{{#arrayElement trips.image 0}}
+        {{/arrayElement}}</p>
 <div id="image">
-    <img id="background" class="" src={{#if trips.image}} {{trips.image}}
-        {{else}} "https://images.unsplash.com/photo-1580993123109-63aea48b2807?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80"
-        {{/if}}>
+    <img id="background" class="" src={{#arrayElement this.image 1}}
+        {{/arrayElement}}>
 </div>
 <div id="image">
     <img id="layer" src="./assets/img/layer4.png">
 
 </div>
+

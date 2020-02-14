@@ -7,13 +7,16 @@ const unsplash = require("unsplash-js");
 
 
 router.get("/", (req, res) => {
+
+const myUnsplash = require("../config/unsplash");
+
   myUnsplash.search
-    .photos("london", 1, 10, { orientation: "portrait" })
+    .photos("canada", 1, 10, { orientation: "landscape" })
     .then(unsplash.toJson)
     .then(json => {
       console.log(json);
-      res.render("home");
-      // res.send(`<img src="${json.results[0].urls.full}" alt=""></img>`);
+      // res.send(json.results[0].urls.regular);
+      res.send(`<img src="${json.results[0].urls.full}" alt=""></img>`);
     });
 });
 

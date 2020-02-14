@@ -29,7 +29,7 @@ function displayPreview(e) {
         formatDate(trip.cityOrigin.date).toDateString() +
         " | " +
         formatDate(trip.cityToVisit.date).toDateString();
-      var accommodations_type = trip.accommodations.accommodations_type;
+    //   var accommodations_type = trip.accommodations.accommodations_type;
       var transports_type = trip.cityOrigin.transport_type;
       var necessaryThings = trip.necessaryThings;
       var activities = trip.activities;
@@ -51,16 +51,19 @@ function displayPreview(e) {
         accommodations.accommodations_price;
       var tickets = trip.cityOrigin.transportUrl;
       var background = trip.image[1];
+      var imageMainColors = trip.imageColor
     //   var username = trip.userOwner[0].username;
+// console.log(accommodations.accommodations_type);
+console.log(trip.cityOrigin);
 
       // document.querySelector(".information_trip.city").innerHTML = city;
       document.querySelector("#details .dates").innerHTML = date;
       document.querySelector("#details .trip_name").innerHTML = title;
       document.querySelector("#details .place").innerHTML = from + " | " + to;
       document.querySelector("#details .accommodations").innerHTML =
-        fontAwersome(accommodations_type) +
+        fontAwersome(accommodations.accommodations_type) +
         " " +
-        accommodations_type +
+        accommodations.accommodations_type +
         " in " +
         accommodations.accommodations_address.city;
       document.querySelector("#details .transports").innerHTML = fontAwersome(
@@ -73,6 +76,9 @@ function displayPreview(e) {
       document.getElementById("notes").innerHTML = notes;
     //   document.querySelector(".flex.username").innerHTML = username;
     document.getElementById("background").src = background
+    // document.querySelector(".place.flex").style.backgroundColor = imageMainColors[1]
+console.log(background,"--------------------------------------------");
+
     })
     .catch(apiErr => console.log(apiErr));
 }
@@ -140,7 +146,7 @@ const completeList = (nameArr, arr) =>
 
 function fontAwersome(option) {
   let renderAwersome = "";
-  if (typeof option === "string") option = [option];
+  if (typeof option === "string" || option === null) option = [option];
   option.forEach(a => {
     if (a === "house" || a === "hostel")
       renderAwersome += '<i class="fas fa-home"></i>';

@@ -235,7 +235,7 @@ span {
 
 .trips-container {
   background-color: #fff;
-  height: 200vh;
+  /* height: cover; */
   width: 200px;
   font-family: "Montserrat", sans-serif;
   padding: 0 3vw;
@@ -300,7 +300,7 @@ width: 10000px;} */
   position: fixed;
   left: 260px;
   z-index: 1000;
-  background-color: rgba(255, 224, 102, 0.8);
+  background-color: rgba(255, 224, 102,0.9);
   width: 40vw;
   height: 100vh;
   padding: 1vw;
@@ -335,8 +335,12 @@ width: 10000px;} */
 
 #timeline {
   z-index: 1000;
+  min-height: 92vh;
 }
 
+#notes{
+text-align: center;
+}
 #image #background {
   -o-object-fit: cover;
   object-fit: cover;
@@ -345,11 +349,12 @@ width: 10000px;} */
 }
 
 #image #layer {
-  -o-object-fit: contain;
-  object-fit: contain;
+  -o-object-fit: cover;
+  object-fit: cover;
   -o-object-position: left;
   object-position: left;
   margin-left: 200px;
+  margin-top: 50px;
 }
 
 #image img {
@@ -662,6 +667,8 @@ hr#line {
 
 @media only screen and (max-width: 450px) {
   #timeline {
+    min-height: unset;
+    padding-top: 5vw;
     display: flex;
     align-items: center;
     overflow-x: scroll;

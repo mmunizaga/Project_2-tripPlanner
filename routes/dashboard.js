@@ -118,12 +118,23 @@ router.post("/my-trip/:id/edit", protectRoute, (req, res) => {
     // image
   };
 
+
+  myUnsplash.search
+  .photos(toCountry, 1, 2, { orientation: "landscape" })
+  .then(unsplash.toJson)
+  .then(json => {
+    data.image = [json.results[0].urls.thumb,json.results[1].urls.regular];
+    // data.imageColor = [json.results[0].color,json.results[1].color];
+
+
+  
   tripModel
     .findByIdAndUpdate(req.params.id, data)
     .then(trip => {
-      res.redirect(`/my-trip/${req.params.id}`);
+      res.redirect(`/all-trips`);
     })
     .catch(error => console.log(error));
+});
 });
 
 router.post("/create-a-trip", protectRoute, (req, res, next) => {
@@ -150,6 +161,7 @@ router.post("/create-a-trip", protectRoute, (req, res, next) => {
   const ticket_price_go = req.body.ticket_price_go;
   const notes = req.body.notes;
   const necessaryThings = req.body.necessaryThings;
+console.log(transport_type_go);
 
   const data = {
     userOwner: [req.session.currentUser._id],
@@ -187,7 +199,7 @@ router.post("/create-a-trip", protectRoute, (req, res, next) => {
   };
 
   myUnsplash.search
-    .photos(toCountry, 1, 2, { orientation: "portrait" })
+    .photos(toCountry, 1, 2, { orientation: "landscape" })
     .then(unsplash.toJson)
     .then(json => {
       data.image = [json.results[0].urls.thumb,json.results[1].urls.regular];

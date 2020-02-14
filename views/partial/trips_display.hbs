@@ -3,10 +3,10 @@
         {{#each trips}}
         <div class="trip-container flex vcenter">
             <div class="left">
-                <div class="image-container"><a href="/my-trip/{{trip._id}}/edit-my-trip"><img src="{{#arrayElement this.image 0}}
+                <div class="image-container"><a href="/my-trip/{{this._id}}/edit-my-trip"><img src="{{#arrayElement this.image 0}}
         {{/arrayElement}}"
                             id="{{this._id}}"></a></div>
-                <div class="title-container"><a href="/my-trip/{{trip._id}}/edit-my-trip">
+                <div class="title-container"><a href="/my-trip/{{this._id}}/edit-my-trip">
                         <h3>{{this.title}}</h3>
                     </a></div>
                 <div class="destination-container">
@@ -73,14 +73,14 @@
 
 
 </div>
-<p>{{#arrayElement trips.image 0}}
-        {{/arrayElement}}</p>
+
 <div id="image">
-    <img id="background" class="" src={{#arrayElement this.image 1}}
-        {{/arrayElement}}>
+    <img id="background" class="" src="https://source.unsplash.com/1600x900/?nature,water">
 </div>
 <div id="image">
-    <img id="layer" src="./assets/img/layer4.png">
+    <img id="layer" src="./assets/img/layer3.png">
 
 </div>
 
+
+{{!-- https://source.unsplash.com/1600x900/?nature,water --}}

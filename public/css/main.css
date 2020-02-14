@@ -869,7 +869,7 @@ h1{
   padding-top: 0.8em;
 }
 
-.delete-btn a {
+.delete-btn {
   text-decoration: none;
   font-family: "Raleway", sans-serif;
   font-size: 1em;
@@ -882,6 +882,10 @@ h1{
   display: flex;
   justify-content: center;
   align-self: center;
+}
+
+.btns a {
+  text-decoration: none;
 }
 
 @-webkit-keyframes blink-1 {

@@ -73,7 +73,7 @@
                     <h3>Visiting</h3>
                     <div class="wrap-1">
                     <label for="dateArrive">Date:</label>
-                    <input type="datetime-local" id="dateArrive" name="dateArrive" value="2020-06-12T19:30"
+                    <input type="datetime-local" id="dateArrive" name="dateArrive" value="{{#now}}{{/now}}"
                         min="2020-01-07T00:00" max="2050-06-14T00:00">
                     <label for="toCity">City:</label>
                     <input class="input" name="toCity" type="text">
@@ -152,13 +152,13 @@
                     <h4>Adress:</h4>
                     <div class="adress">
                         <label for="accommodations_number">number</label>
-                        <input class="input" name="accommodations_number" type="number">
+                        <input class="input" name="accommodations_number" type="number" placeholder="ex: 3">
                         <label for="accommodations_street_type">Type of street:</label>
-                        <input class="input" name="accommodations_street_type" type="text">
+                        <input class="input" name="accommodations_street_type" type="text" placeholder="ex: Avenue">
                         <label for="accommodations_street">Street name:</label>
-                        <input class="input" name="accommodations_street" type="text">
+                        <input class="input" name="accommodations_street" type="text" placeholder="ex: Sebastian Elcano">
                         <label for="accommodations_city">City:</label>
-                        <input class="input" name="accommodations_city" type="text">
+                        <input class="input" name="accommodations_city" type="text" placeholder="ex: Santiago">
                         <label for="accommodations_url">URL link:</label>
                         <input class="input" name="accommodations_url" type="text" placeholder="http://">
                         <label for="accommodations_price">Price:</label>
